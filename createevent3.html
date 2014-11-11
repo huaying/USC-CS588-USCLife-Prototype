@@ -18,34 +18,46 @@
 
 </head>
 <body>
-    <div data-role="page" class="ui-page-theme-b" id="c_event3">
+    <div data-role="page" class="ui-page-theme-c" id="c_event3">
          <script src="./js/make-hearder.js"></script>
 
-        <div data-role="main" class="ui-content c_event3" >
+        <div data-role="main" class="ui-content" >
+             <div class="container">
+                <ol class="progress-meter">
+                  <li class="progress-point done">Category</li><li class="progress-point done">Info</li><li class="progress-point current">Details</li><li class="progress-point todo">Finished</li>
+                </ol>
+            </div>
+            <div class="c_event3">
             <form method="post" action="demoform.asp">
 
                 <div class="ui-grid-a">
                     <div class="ui-block-a">
-                        <label style="line-height:60px">Available seats:</label>
+                        <label style="line-height:60px"><strong>Open seats:</strong></label>
                     </div>
                     <div class="ui-block-b">
                         <select>
-                            <option>100+</option>
+                            <option>Less than 5</option>
+                            <option>5-10</option>
+                            <option>11-20</option>
+                            <option>21-30</option>
+                            <option>31-40</option>
+                            <option>41-50</option>
+                            <option selected="selected">100+</option>
                         </select>
                     </div>
                 </div>
 
-                <label>Detail:</label>
+                <label><strong>Details:</strong></label>
                 <textarea></textarea>
 
                 <div class="ui-grid-b">
-                    <div class="ui-block-a"><a href="menu.html" class="ui-shadow ui-btn">Cancel</a></div>
-                    <div class="ui-block-b"><a href="createevent2.html" class="ui-shadow ui-btn">Back</a></div>
-                    <div class="ui-block-c"><a href="createevent4.html" class="ui-shadow ui-btn">Next</a></div>
+                    <div class="ui-block-a"><a href="menu.html" class="ui-shadow ui-btn" style="font-size:10px">Cancel</a></div>
+                    <div class="ui-block-b"><a href="createevent2.html" class="ui-shadow ui-btn" style="font-size:10px">Back</a></div>
+                    <div class="ui-block-c"><a href="createevent4.html" class="ui-shadow ui-btn" style="font-size:10px">Next</a></div>
                 </div>
 
             </form>
-
+            </div>
         </div>
         <script>
             $('#c_event3').on("pageshow",function(){

@@ -11,53 +11,71 @@
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
     <title>USCLife</title>
 
+    <style>
+    </style>
 
 </head>
 <body>
-    <div data-role="page" class="ui-page-theme-b" >
+    <div data-role="page" class="ui-page-theme-a" >
          <script src="./js/make-hearder.js"></script>
-
+         
         <div data-role="main" class="ui-content">
+            
+            <div class="container">
+                <ol class="progress-meter">
+                  <li class="progress-point current">Category</li><li class="progress-point todo">Info</li><li class="progress-point todo">Details</li><li class="progress-point todo">Finished</li>
+                </ol>
+            </div>
 
-            <ul data-role="listview" data-inset="true">
+
+            <ul data-role="listview" data-inset="true" class="create-1-event-list">
                 <li>
                     <a href="createevent2.html">
                         <img src="images/academic.png">
                         <h2>ACADEMIC</h2>
-                        <p>Give some info here</p>
+                        <p>Tech talks, Guest lecturers, Group meetings </p>
                     </a>
                 </li>
                 <li>
                     <a href="createevent2.html">
                         <img src="images/sports.png">
                         <h2>SPORTS</h2>
-                        <p>Give some info here</p>
+                        <p>Basketball games, Zumba, Staples Center</p>
                     </a>
                 </li>
                 <li>
                     <a href="createevent2.html">
                         <img src="images/dining.png">
                         <h2>DINING</h2>
-                        <p>Give some info here</p>
+                        <p>Dining hall, Restaurants, Chipotle, La Barca</p>
                     </a>
                 </li>
                 <li>
                     <a href="createevent2.html">
                         <img src="images/fun.png">
                         <h2>FUN</h2>
-                        <p>Give some info here</p>
+                        <p>Concerts, Movies, Ground Zero, L.A. Live</p>
                     </a>
                 </li>
                 <li>
                     <a href="createevent2.html">
                         <img src="images/shopping.png">
                         <h2>SHOPPING</h2>
-                        <p>Give some info here</p>
+                        <p>Grocery, Clothes, Ralphs, CVS</p>
                     </a>
                 </li>
 
             </ul>
         </div>
+        
+        <script type="text/javascript">
+            $(window).load(function(){
+                $("ol.progtrckr").each(function(){
+                    $(this).attr("data-progtrckr-steps", 
+                                 $(this).children("li").length);
+                });
+            })
+        </script>
 
     </body>
     </html>

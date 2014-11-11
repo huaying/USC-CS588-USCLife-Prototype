@@ -11,56 +11,78 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/latest/jqm-datebox.core.min.js"></script>
+    <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
     <title>USCLife</title>
 
 
 </head>
 <body>
-    <div data-role="page" class="ui-page-theme-b" >
+    <div data-role="page" class="ui-page-theme-a" >
          <script src="./js/make-hearder.js"></script>
 
-    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/latest/jqm-datebox.core.min.js"></script>
-    <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
-        <div data-role="main" class="ui-content c_event2" >
+        <div data-role="main" class="ui-content">
+            <div class="container">
+                <ol class="progress-meter">
+                  <li class="progress-point done">Category</li><li class="progress-point current">Info</li><li class="progress-point todo">Details</li><li class="progress-point todo">Finished</li>
+                </ol>
+            </div>
+            <div class="c_event2">
             <form method="post" action="demoform.asp">
                 <input type="text" name="fname" id="Ename" placeholder="Event Name">
 
                 <div class="ui-grid-a">
                     <div class="ui-block-a">
-                        <label style="line-height:60px">Date:</label>
+                        <label style="line-height:60px"><strong>Date:</strong></label>
                     </div>
                     <div class="ui-block-b">
-                        <input class="btn-inline" type="text" data-role="datebox" data-options='{"mode":"flipbox"}'/>
+                        <input class="btn-inline" type="text" data-role="datebox" data-options='{"mode":"flipbox", "overrideDateFormat":"%b %-d, %Y"}'/>
                     </div>
                 </div>
 
                 <div class="ui-grid-a">
                     <div class="ui-block-a">
-                        <label style="line-height:60px">Time:</label>
+                        <label style="line-height:60px"><strong>Start Time:</strong></label>
                     </div>
                     <div class="ui-block-b">
-                        <input type="text" data-role="datebox" data-options='{"mode":"timeflipbox"}' />
+                        <input type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "timeFormatOverride": 12, "overrideTimeOutput":" %-I:%M %p"}' />
                     </div>
                 </div>
+                 <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label style="line-height:60px"><strong>End Time:</strong></label>
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="text" data-role="datebox" data-options='{"mode":"timeflipbox", "timeFormatOverride": 12, "overrideTimeOutput":" %-I:%M %p"}' />
+                    </div>
+                </div>
+                 
+                 
                 <div class="ui-grid-a">
                     <div class="ui-block-a">
-                        <label style="line-height:60px">Location:</label>
+                        <label style="line-height:60px"><strong>Location:</strong></label>
                     </div>
                     <div class="ui-block-b">
                         <select>
-                            <option>RTCC</option>
+                            <option>Accounting Library</option>
+                            <option>Bing Theatre</option>
+                            <option>Bovard Auditorium</option>
+                            <option>Cafe 84</option>
+                            <option>Cardinal Gardens</option>
+                            <option>Chipotle</option>
+                            <option selected="selected">RTCC</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="ui-grid-b">
-                    <div class="ui-block-a"><a href="menu.html" class="ui-shadow ui-btn">Cancel</a></div>
-                    <div class="ui-block-b"><a href="createevent.html" class="ui-shadow ui-btn">Back</a></div>
-                    <div class="ui-block-c"><a href="createevent3.html" class="ui-shadow ui-btn">Next</a></div>
+                    <div class="ui-block-a"><a href="menu.html" class="ui-shadow ui-btn" style="font-size:10px">Cancel</a></div>
+                    <div class="ui-block-b"><a href="createevent.html" class="ui-shadow ui-btn" style="font-size:10px">Back</a></div>
+                    <div class="ui-block-c"><a href="createevent3.html" class="ui-shadow ui-btn" style="font-size:10px">Next</a></div>
                 </div>
             
             </form>
-
+            </div>
             </div>
         </div>
 
