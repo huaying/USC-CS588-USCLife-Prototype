@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jtsage.com/datebox/latest/jqm-datebox.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+    <title>USCLife</title>
+
+
+</head>
+<body>
+    <div data-role="page" class="ui-page-theme-b" >
+        <div data-role="header">
+            <a href="menu.html" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-bars ui-btn-icon-notext"></a>
+            <h1>USCLife</h1>
+            <a class="thumb-box ui-corner-all" href="#"><img class="thumb" src="images/girl.png"/></a>
+        </div>
+
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/latest/jqm-datebox.core.min.js"></script>
+    <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
+        <div data-role="main" class="ui-content c_event2" >
+            <form method="post" action="demoform.asp">
+                <input type="text" name="fname" id="Ename" placeholder="Event Name">
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label style="line-height:60px">Date:</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <input class="btn-inline" type="text" data-role="datebox" data-options='{"mode":"flipbox"}'/>
+                    </div>
+                </div>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label style="line-height:60px">Time:</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <input type="text" data-role="datebox" data-options='{"mode":"timeflipbox"}' />
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label style="line-height:60px">Location:</label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select>
+                            <option>RTCC</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="ui-grid-b">
+                    <div class="ui-block-a"><a href="menu.html" class="ui-shadow ui-btn">Cancel</a></div>
+                    <div class="ui-block-b"><a href="createevent.html" class="ui-shadow ui-btn">Back</a></div>
+                    <div class="ui-block-c"><a href="createevent3.html" class="ui-shadow ui-btn">Next</a></div>
+                </div>
+            
+            </form>
+
+            </div>
+        </div>
+
+    </body>
+    </html>
