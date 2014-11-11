@@ -25,10 +25,11 @@ var header = ''
        +'     <a class="thumb-box ui-corner-all" href="#"><img class="thumb" src="images/girl.png"/></a>'
        +' </div>'
 
- //      $(document).on('pagebeforeshow',function(){
-       //    console.log($.mobile.activePage.children(".menubar").length);
-//            if($.mobile.activePage.children(".menubar").
-            $('.main-page').prepend(header);
-  //     });
+       $(document).on('pagebeforeshow',function(){
+           $('.menubar').panel('close').remove();
+           $('.header').remove();
+            $.mobile.activePage.prepend(header).trigger('create');
+           
+       });
 
 })();
