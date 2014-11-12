@@ -19,15 +19,10 @@ var header = ''
            +' <a href="about.html" class="ui-btn ui-btn-b">About Us</a>'
            +' <a href="feedback.html" class="ui-btn ui-btn-b">Feedback</a>'
 +'        </div>    '
-        
-        +' <div class="header-container">'
-       +' <div data-role="header" class="header" style="background-color:#424242; color:#fff; border: 0; padding: 13px;">'
-       +'     <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-bars ui-btn-icon-notext" style="margin-top:5px;"></a>'
-       +'     <div style="text-align:center">'
-       +'     <h3 style="">USCLife</h3>'
-       +'     </div>'
+       +' <div data-role="header" class="header">'
+       +'     <a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-bars ui-btn-icon-notext"></a>'
+       +'     <h1>USCLife</h1>'
        +'     <a class="thumb-box ui-corner-all" href=""><img class="thumb" src=""/></a>'
-       + '<div class="change-category" style="display:none"><img src="images/all.png"></div>'
        +' </div>'
 
        , store = localStorage
@@ -70,12 +65,4 @@ var header = ''
               .off('click','.login-btn').on('click','.login-btn',login)
               .off('click','.logout-btn').on('click','.logout-btn',logout)
               ;
-    
-    
-    function changeTitle(newTitle) {
-        $(".header div h3").html(newTitle);
-    }
-    
-    function showCategories() {
-        $(".change-category").css("display", "block");
-    }
+       

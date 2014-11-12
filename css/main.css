@@ -19,6 +19,12 @@ p {
     -webkit-margin-after: 0;
 }
 
+.footer-map-list a{
+    width:100%;
+    margin:0;
+    position:relative;
+    left:-4px;
+}
 
 .thumb-box{
     padding:0;
