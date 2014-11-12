@@ -16,7 +16,7 @@
    <div data-role="page" class="ui-page-theme-w" >
          <script src="./js/make-hearder.js"></script>
 
-        <div data-role="main" class="ui-content eventlist" id="event_recommended">
+        <div data-role="main" class="ui-content eventlist" id="upcoming_event">
             
             
           <div class="category-bar">
@@ -112,7 +112,7 @@
         <script type="text/javascript">
             
             $(document).on('pagebeforeshow',function(){
-               changeTitle("Recommened Events");
+               changeTitle("Upcoming Events");
                showCategories();
                
                $(".change-category img").off('click').on('click',function () {

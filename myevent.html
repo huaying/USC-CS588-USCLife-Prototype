@@ -109,24 +109,24 @@
                 </li>
 
          </ul>
-        </div>
-        
         <script type="text/javascript">
             
-            $(document).ready(function () {
+            $(document).on('pagebeforeshow',function(){
                changeTitle("My Events");
                showCategories();
                
-               $(".change-category img").click(function () {
+               $(".change-category img").off('click').on('click',function () {
                   $(".category-bar").slideToggle(250);
                });
             
-               $(".category-bar ol li img").click(function () {              
+               $(".category-bar ol li img").off('click').on('click',function () {              
                   var this_image = $(this).attr("src");
                   $(".change-category img").attr("src", this_image);
                });
             });
         </script>
+        </div>
+        
 
     </body>
     </html>

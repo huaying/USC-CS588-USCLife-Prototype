@@ -19,98 +19,100 @@
 
     <div data-role="page" class="ui-page-theme-a main-page" id="main-page">
         <script src="./js/make-hearder.js"></script>
-        <div data-role="main" class="ui-content" >
-            <div class="header-scroll">
-                <ul>
-                    <li><a href="allevents.html"> <img src="images/all.png"></a></li>
-                    <li><a href="academicevents.html"><img src="images/academic.png"></a></li>
-                    <li><a href="sportsevents.html"><img src="images/sports.png"></a></li>
-                    <li><a href="diningevent.html"><img src="images/dining.png"></a></li>
-                    <li><a href="myevent.html"><img src="images/fun.png"></a></li>
-                    <li><a href="myevent.html"><img src="images/shopping.png"></a></li>
-                </ul>
-            </div>
-            <div class="clearfix"></div>
-            <div data-role="collapsibleset" data-corners="false" class="events-collapse">
-                <div data-role="collapsible">
-                    <h3 class="event-header">
-                        <img class="pull-left" src="images/dining.png">
-                       
-                            <div>Dining with Trojans</div>
-                            <div>Location: VKC 201</div>
-                            <div>DateTime: 3:00pm 13 Jsn 2015</div>
-                        
+
+        <div data-role="main" class="ui-content eventlist" id="myevent">
+            
+            
+          <div class="category-bar">
+               <ol>
+                  <li><img src="images/all.png"></li>
+                  <li><img src="images/academic.png"></li>
+                  <li><img src="images/sports.png"></li>
+                  <li><img src="images/dining.png"></li>
+                  <li><img src="images/fun.png"></li>
+                  <li><img src="images/shopping.png"></li>
+               </ol>
+            </div>   
+         
+         
+         <div style="clear:both"></div>
+         
+         
+         <ul data-role="listview" data-filter="true" data-inset="true" class="create-1-event-list" style="margin:0px; overflow: scroll">
+                <li>
+                    <a href="eventdetail.html" style="padding-left:0px">
+                        <h3 class="event-header">
+                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/fun.png"">
+                        <div class="pull-left">
+                            <div class="event-name">Wicked Musical</div>
+                            <div class="event-loc">Bovard Auditorium</div>
+                            <div class="event-date">Jan 13, 2015 &nbsp; 6:00pm - 9:30pm</div>
+                        </div>
                     </h3>
-                    <p>
-                        <img class="map_preview"  src="images/map.jpg">
-                    </p>
-                </div>
-                <div data-role="collapsible">
-                    <h3 class="event-header">
-                        <a href=""><img class="pull-left"  src="images/academic.png"></a> 
-                       
-                            <div>Yahoo I-Chat</div>
-                            <div>Location: SAL 124</div>
-                            <div>DateTime: 10:20am 28 Oct 2014</div>
-                        
+                    </a>
+                </li>
+                <li>
+                    <a href="eventdetail.html" style="padding-left:0px">
+                        <h3 class="event-header">
+                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/sports.png">
+                        <div class="pull-left">
+                            <div class="event-name">Lakers vs Bulls</div>
+                            <div class="event-loc">Staples Center</div>
+                            <div class="event-date">Jan 13, 2015 &nbsp; 7:00pm - 10:30pm</div>
+                        </div>
                     </h3>
-                    <p>
-                        <img class="map_preview"  src="images/map.jpg">
-                    </p>
-                </div>
-                <div data-role="collapsible">
-                    <h3 class="event-header">
-                        <img class="pull-left" src="images/sports.png">
-                       
-                            <div>Lyon Bike Race</div>
-                            <div>Location: Lyon 124</div>
-                            <div>DateTime: 9:30am 28 Oct 2014</div>
-                        
+                    </a>
+                </li>
+                <li>
+                    <a href="eventdetail.html" style="padding-left:0px">
+                        <h3 class="event-header">
+                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/dining.png">
+                        <div class="pull-left">
+                            <div class="event-name">Dining with Trojans</div>
+                            <div class="event-loc">VKC 201</div>
+                            <div class="event-date">Jan 14, 2015 &nbsp; 6:00pm - 8:30pm</div>
+                        </div>
                     </h3>
-                    <p>
-                        <a href="">  <img class="map_preview"  src="images/map.jpg"></a>
-                    </p>
-                </div>
-                <div data-role="collapsible">
-                    <h3 class="event-header">
-                        <img class="pull-left" src="images/shopping.png">
-                       
-                            <div>Ralph's late night</div>
-                            <div>Location: Ralph's</div>
-                            <div>DateTime: 11:00pm 29 Oct 2014</div>
-                      
+                    </a>
+                </li>
+                <li>
+                    <a href="eventdetail.html" style="padding-left:0px">
+                        <h3 class="event-header">
+                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/academic.png">
+                        <div class="pull-left">
+                            <div class="event-name">588 Study Session</div>
+                            <div class="event-loc">RTCC Trojan Lounge</div>
+                            <div class="event-date">Jan 14, 2015 &nbsp; 6:00pm - 8:30pm</div>
+                        </div>
                     </h3>
-                    <p>
-                        <img class="map_preview"  src="images/map.jpg">
-                    </p>
-                </div>
-                <div data-role="collapsible">
-                    <h3 class="event-header">
-                        <a href=""> <img class="pull-left" src="images/fun.png"></a>
-                                                
-                            <div>EVK demo</div>
-                            <div>Location: SAL 125</div>
-                            <div>DateTime: 9:30am 28 Oct 2014</div>
-                      
+                    </a>
+                </li>
+                <li>
+                    <a href="eventdetail.html" style="padding-left:0px">
+                        <h3 class="event-header">
+                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/fun.png">
+                        <div class="pull-left">
+                            <div class="event-name">Taylor Swift Concert</div>
+                            <div class="event-loc">L.A. Live</div>
+                            <div class="event-date">Jan 14, 2015 &nbsp; 6:30pm - 9:30pm</div>
+                        </div>
                     </h3>
-                    <p>
-                        <a href=""><img class="map_preview"  src="images/map.jpg"></a>
-                    </p>
-                </div>
-                <div data-role="collapsible">
-                    <h3 class="event-header">
-                        <a href=""><img class="pull-left" src="images/sports.png"></a>
-                       
-                            <div>Boxing</div>
-                            <div>Location: VKC 201</div>
-                            <div>DateTime: 9:00am 29 Oct 2014</div>
-                       
+                    </a>
+                </li>
+                <li>
+                    <a href="eventdetail.html" style="padding-left:0px">
+                        <h3 class="event-header">
+                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/sports.png">
+                        <div class="pull-left">
+                            <div class="event-name">Basketball Match</div>
+                            <div class="event-loc">Lyon Center</div>
+                            <div class="event-date">Jan 16, 2015 &nbsp; 5:00pm - 7:00pm</div>
+                        </div>
                     </h3>
-                    <p>
-                        <a href=""><img class="map_preview"  src="images/map.jpg"></a>
-                    </p>
-                </div>
-            </div>
+                    </a>
+                </li>
+
+         </ul>
         </div>
             <div data-role="footer" data-position="fixed" class="footer-map-list">
                 <div class="ui-grid-a">
@@ -122,6 +124,21 @@
                     </div>
                 </div>
             </div>
+        <script type="text/javascript">
+            
+            $(document).on('pagebeforeshow',function(){
+               showCategories();
+               
+               $(".change-category img").off('click').on('click',function () {
+                  $(".category-bar").slideToggle(250);
+               });
+            
+               $(".category-bar ol li img").off('click').on('click',function () {              
+                  var this_image = $(this).attr("src");
+                  $(".change-category img").attr("src", this_image);
+               });
+            });
+        </script>
     </div>  
 
 

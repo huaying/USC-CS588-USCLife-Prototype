@@ -15,15 +15,23 @@
     <div data-role="page" class="ui-page-theme-a" id="main-page">
          <script src="./js/make-hearder.js"></script>
 
-        <div data-role="main" class="ui-content" >
+        <div data-role="main" class="ui-content">
             <a href="addfriends.html" class="ui-btn">Search and Add Friends</a>
+                    
+            <div data-role="popup" class="ui-corner-all" id="del">
+                <div style="padding:20px 20px 14px">
+                    <h3>Unfriend?</h3>
+                    <button class="ui-btn ui-icon-check ui-btn-icon-left ui-btn-inline">Check</button>
+                    <button class="ui-btn ui-icon-delete ui-btn-icon-left ui-btn-inline">Cancel</button>
+                </div>
+            </div>
             <ul data-role="listview" data-inset="true" class="friend-list">
                 <li>
                         <img src="images/jacob.png">
                         <h3>Name: Jacob Jone</h3>
                         <h3>Major: Computer Science</h3>
                         <p class="friend-link">
-                            <a class="anchor">Delete</a>
+                            <a href="#del" data-rel="popup" data-position-to="window" data-transition="pop" class="anchor">Delete</a>
                             <a href="friend_detail.html" class="anchor">Detail</a>
                         </p>
                 </li>
