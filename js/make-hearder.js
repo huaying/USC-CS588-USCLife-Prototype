@@ -9,7 +9,7 @@ var header = ''
            +'             <li><a href="myevent.html">My Events</a></li>'
            +'             <li><a>Upcoming Events</a></li>'
            +'             <li><a href="event_history.html">Event History</a></li>'
-           +'             <li><a>Recommended Events</a></li>'
+           +'             <li><a href="recomemdedevents.html">Recommended Events</a></li>'
            +'         </ul>'
            +'     </div>'
            +' </div>'
@@ -71,6 +71,18 @@ var header = ''
               .off('click','.logout-btn').on('click','.logout-btn',logout)
               ;
     
+   urls = [
+        "http://cdn.jtsage.com/datebox/latest/jqm-datebox.core.min.js",
+        "http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"
+        ];
+
+      $.ajaxSetup({cache:true});
+      for(i in urls){        
+          $.ajax({
+              url: urls[i],
+              dataType: "script",
+          });
+      }
     
     function changeTitle(newTitle) {
         $(".header div h3").html(newTitle);
