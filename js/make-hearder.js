@@ -62,13 +62,31 @@ var header = ''
             delete store.login;
             $(location).attr('href','index.html');
         }
-       ;
+        ,cate_judge = function(){
+            var pageID = $.mobile.activePage.attr('id');
+            console.log(pageID);
+            if($.inArray(pageID,["main-page","ev_academic","ev_fun","ev_shopping","ev_sports","ev_dining"])!= -1){
+                showCategories();
 
-
-   $(document).off('pagebeforeshow').on('pagebeforeshow',pagebeforeshow)
+                $(".change-category img").off('click').on('click',function () {
+                    $(".category-bar").slideToggle(250);
+                });
+                $(".category-bar").slideToggle(250);
+                if(pageID == "main-page"){
+                    $(".change-category img").attr("src", "./images/all.png");
+                }else{
+                    $(".change-category img").attr("src", "./images/"+pageID.substring(3)+".png");
+                }
+            }else{
+                $(".change-category img").off('click').hide();
+            }
+        }; 
+   $(document).off('pagechange').on('pagechange',cate_judge)
+              .off('pagebeforeshow').on('pagebeforeshow',pagebeforeshow)
               .off('click','.thumb').on('click','.thumb',user)
               .off('click','.login-btn').on('click','.login-btn',login)
               .off('click','.logout-btn').on('click','.logout-btn',logout)
+              
               ;
     
    urls = [

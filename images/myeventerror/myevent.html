@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
     <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/category-bar.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
     <script src="./js/make-hearder.js"></script>
@@ -16,17 +17,16 @@
    <div data-role="page" class="ui-page-theme-w" >
          <script src="./js/make-hearder.js"></script>
 
-        <div data-role="main" class="ui-content eventlist" id="myevent">
+        <div data-role="main" class="ui-content">
             
-            
-          <div class="category-bar">
+            <div class="category-bar">
                <ol>
-                <li> <a href="index.html"><img href="index.html" src="images/all.png"></a></li>
-                 <li>  <a href="myevent_filter_academic.html"><img  src="images/academic.png"></a></li>
-                   <li> <a href="myevent_filter_sports.html"><img  src="images/sports.png"></a></li>
-                   <li> <a href="myevent_filter_dinning.html"><img  src="images/dining.png"></a></li>
-                   <li><a href="event_fun.html"><img src="images/fun.png"></a></li>
-                   <li> <a href="myevent_filter_shopping.html"><img src="images/shopping.png"></a></li>
+                  <li><img src="images/all.png" width="50px" height="50px"></li>
+                  <li><img src="images/academic.png"  width="50px" height="50px"></li>
+                  <li><img src="images/sports.png"  width="50px" height="50px"></li>
+                  <li><img src="images/dining.png"  width="50px" height="50px"></li>
+                  <li><img src="images/fun.png"  width="50px" height="50px"></li>
+                  <li><img src="images/shopping.png"  width="50px" height="50px"></li>
                </ol>
             </div>   
          
@@ -34,9 +34,9 @@
          <div style="clear:both"></div>
          
          
-         <ul data-role="listview" data-filter="true" data-inset="true" class="create-1-event-list" style="margin:0px; overflow: scroll">
+         <ul data-role="listview" data-inset="true" class="create-1-event-list" style="margin:0px; overflow: scroll">
                 <li>
-                    <a href="eventdetail.html" style="padding-left:0px">
+                    <a href="eventdetail.html">
                         <h3 class="event-header">
                         <img class="pull-left" style= "width: 50px; height: 50px" src="images/fun.png"">
                         <div class="pull-left">
@@ -48,7 +48,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="eventdetail.html" style="padding-left:0px">
+                    <a href="eventdetail.html">
                         <h3 class="event-header">
                         <img class="pull-left" style= "width: 50px; height: 50px" src="images/sports.png">
                         <div class="pull-left">
@@ -60,7 +60,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="eventdetail.html" style="padding-left:0px">
+                    <a href="eventdetail.html">
                         <h3 class="event-header">
                         <img class="pull-left" style= "width: 50px; height: 50px" src="images/dining.png">
                         <div class="pull-left">
@@ -72,7 +72,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="eventdetail.html" style="padding-left:0px">
+                    <a href="eventdetail.html">
                         <h3 class="event-header">
                         <img class="pull-left" style= "width: 50px; height: 50px" src="images/academic.png">
                         <div class="pull-left">
@@ -84,7 +84,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="eventdetail.html" style="padding-left:0px">
+                    <a href="eventdetail.html">
                         <h3 class="event-header">
                         <img class="pull-left" style= "width: 50px; height: 50px" src="images/fun.png">
                         <div class="pull-left">
@@ -96,7 +96,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="eventdetail.html" style="padding-left:0px">
+                    <a href="eventdetail.html">
                         <h3 class="event-header">
                         <img class="pull-left" style= "width: 50px; height: 50px" src="images/sports.png">
                         <div class="pull-left">
@@ -109,24 +109,24 @@
                 </li>
 
          </ul>
+        </div>
+        
         <script type="text/javascript">
             
-            $(document).on('pagebeforeshow',function(){
+            $(document).ready(function () {
                changeTitle("My Events");
                showCategories();
                
-               $(".change-category img").off('click').on('click',function () {
-                  $(".category-bar").slideToggle(250);
+               $(".change-category img").click(function () {
+                  $(".category-bar").slideToggle(500);
                });
             
-               $(".category-bar ol li img").off('click').on('click',function () {              
+               $(".category-bar ol li img").click(function () {              
                   var this_image = $(this).attr("src");
                   $(".change-category img").attr("src", this_image);
                });
             });
         </script>
-        </div>
-        
 
     </body>
     </html>

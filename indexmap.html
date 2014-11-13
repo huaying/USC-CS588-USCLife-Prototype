@@ -218,18 +218,23 @@
         <script src="./js/make-hearder.js"></script>
        <div data-role="footer"  class="footer-map-list">
         <div data-role="content" id="mapcontent" >
-            <div id="map" style="width:auto;height:786px"> </div>
+            <div id="map" style="width:auto;"> </div>
         </div>
         
             <div class="ui-grid-a" >
                 <div class="ui-block-a">
-                    <a href="index.html" class="ui-btn" data-ajax="false">LIST</a>
+                    <a href="mapIndex_toList.html" class="ui-btn" data-ajax="false">LIST</a>
                 </div>
                 <div class="ui-block-b">
-                    <a href="indexmap.html" class="ui-btn" onfocus="true">MAP</a>
+                    <a href="indexmap.html" class="ui-btn ui-btn-active" onfocus="true">MAP</a>
                 </div>
             </div>
         </div>
+        <script>
+            console.log($(window).height());
+            $('#map').css('height',$('body').css('overflow-y','hidden').height()-85);
+            
+        </script>
     </div>
 </body>
 </html>
