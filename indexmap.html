@@ -214,7 +214,7 @@
 </head>
 
 <body>
-    <div data-role="page" >
+    <div data-role="page" id="main-map" >
         <script src="./js/make-hearder.js"></script>
        <div data-role="footer"  class="footer-map-list">
         <div data-role="content" id="mapcontent" >
@@ -231,8 +231,8 @@
             </div>
         </div>
         <script>
-            console.log($(window).height());
-            $('#map').css('height',$('body').css('overflow-y','hidden').height()-85);
+            $('#map').css('height',$('body').height()-85);
+            $('#main-map').css('overflow-y','hidden');
             
         </script>
     </div>

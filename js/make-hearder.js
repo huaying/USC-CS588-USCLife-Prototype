@@ -99,6 +99,7 @@ var header = ''
           $.ajax({
               url: urls[i],
               dataType: "script",
+              async: false
           });
       }
     
