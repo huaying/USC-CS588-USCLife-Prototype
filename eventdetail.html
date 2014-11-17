@@ -1,311 +1,174 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
-<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-    
-       <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="./js/slidebar.js"></script>
-    <script src="./js/main.js"></script>
-        <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no">
-    <title>Cluster</title>
-    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/dojo/dijit/themes/tundra/tundra.css">
-    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
 
-     <style>
-        html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
-        /* center the image in the popup */
-        .esriViewPopup .gallery { margin: 0 auto !important; }
-        .page-map #mapcontent, #map {
-            width: 100%;
-            height: 100%;
-            padding: 0;
-            margin:0;
-            overflow:hidden;
-        }
-    </style>
-    <script>
-        var dojoConfig = { 
-            paths: {
-                extras: location.pathname.replace(/\/[^/]+$/, "") + "/extras"
-            }
-        };
-    </script>
-    <script src="http://js.arcgis.com/3.10/"></script>
-    <script>
-        var map;
-        require([
-                "dojo/parser", 
-                "dojo/ready",
-                "dojo/_base/array",
-                "esri/Color",
-                "dojo/dom-style",
-                "dojo/query",
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+    <link rel="stylesheet" type="text/css" href="http://cdn.jtsage.com/datebox/latest/jqm-datebox.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
 
-                "esri/map", 
-                "esri/request",
-                "esri/graphic",
-                "esri/geometry/Extent",
+    <title>Event Details</title>
 
-                "esri/symbols/SimpleMarkerSymbol",
-                "esri/symbols/SimpleFillSymbol",
-                "esri/symbols/PictureMarkerSymbol",
-                "esri/renderers/ClassBreaksRenderer",
-
-                "esri/layers/GraphicsLayer",
-                "esri/SpatialReference",
-                "esri/dijit/PopupTemplate",
-                "esri/geometry/Point",
-                "esri/geometry/webMercatorUtils",
-
-                "extras/ClusterLayer",
-
-                "dijit/layout/BorderContainer", 
-                "dijit/layout/ContentPane", 
-                "dojo/domReady!"
-                ], function(
-                        parser, ready, arrayUtils, Color, domStyle, query,
-                        Map, esriRequest, Graphic, Extent,
-                        SimpleMarkerSymbol, SimpleFillSymbol, PictureMarkerSymbol, ClassBreaksRenderer,
-                        GraphicsLayer, SpatialReference, PopupTemplate, Point, webMercatorUtils,
-                        ClusterLayer
-                        ) {
-                            ready(function() {
-                                parser.parse();
-
-                                var clusterLayer;
-                                var popupOptions = {
-                                    "markerSymbol": new SimpleMarkerSymbol("circle", 20, null, new Color([0, 0, 0, 0.25])),
-                            "marginLeft": "20",
-                            "marginTop": "20"
-                                };
-                                map = new Map("map", {
-                                    basemap: "streets",
-                                    center: [-118.2856, 34.0205],
-                                    zoom: 15
-                                });
-
-                                map.on("load", function() {
-                                    // hide the popup's ZoomTo link as it doesn't make sense for cluster features
-                                    domStyle.set(query("a.action.zoomTo")[0], "display", "none");
-
-                                    // get the latest 1000 photos from instagram/laguna beach
-                                    var photos = esriRequest({
-                                        "url": "data/1-photos.json",
-                                        "handleAs": "json"
-                                    });
-
-                                    //for each loop to go thru all the json files.  
-
-                                    photos.then(addClusters, error);
-                                });
-
-                                function addClusters(resp) {
-                                    var photoInfo = {};
-                                    var wgs = new SpatialReference({
-                                        "wkid": 4339
-                                    });
-                                    photoInfo.data = arrayUtils.map(resp, function(p) {
-                                        var latlng = new  Point(parseFloat(p.lng), parseFloat(p.lat), wgs);
-                                        var webMercator = webMercatorUtils.geographicToWebMercator(latlng);
-                                        var attributes = {
-                                            "Caption": p.caption,
-                                        "Name": p.full_name,
-                                        "Image": p.image,
-                                        "Link": p.link
-                                        };
-                                        return {
-                                            "x": webMercator.x,
-                                        "y": webMercator.y,
-                                        "attributes": attributes
-                                        };
-                                    });
-
-                                    // popupTemplate to work with attributes specific to this dataset
-                                    var popupTemplate = PopupTemplate({
-                                        "title": "",
-                                        "fieldInfos": [{
-                                            "fieldName": "Caption",
-                                        visible: true
-                                        }, {
-                                            "fieldName": "Name",
-                                        "label": "By",
-                                        visible: true
-                                        }, {
-                                            "fieldName": "Link",
-                                        "label": "On Instagram",
-                                        visible: true
-                                        }],
-                                        "mediaInfos": [{
-                                            "title": "",
-                                        "caption": "",
-                                        "type": "image",
-                                        "value": {
-                                            "sourceURL": "{Image}",
-                                        "linkURL": "{Link}"
-                                        }
-                                        }]
-                                    });
-
-                                    // cluster layer that uses OpenLayers style clustering
-                                    clusterLayer = new ClusterLayer({
-                                        "data": photoInfo.data,
-                                                 "distance": 100,
-                                                 "id": "clusters",
-                                                 "labelColor": "#fff",
-                                                 "labelOffset": 10,
-                                                 "resolution": map.extent.getWidth() / map.width,
-                                                 "singleColor": "#888",
-                                                 "singleTemplate": popupTemplate
-                                    });
-                                    var defaultSym = new SimpleMarkerSymbol().setSize(4);
-                                    var renderer = new ClassBreaksRenderer(defaultSym, "clusterCount");
-
-                                    var picBaseUrl = "http://static.arcgis.com/images/Symbols/Shapes/";
-                                    var blue = new PictureMarkerSymbol(picBaseUrl + "BluePin1LargeB.png", 32, 32).setOffset(0, 15);
-                                    var green = new PictureMarkerSymbol(picBaseUrl + "GreenPin1LargeB.png", 64, 64).setOffset(0, 15);
-                                    var red = new PictureMarkerSymbol(picBaseUrl + "RedPin1LargeB.png", 72, 72).setOffset(0, 15);
-                                    renderer.addBreak(0, 2, red);
-                                    renderer.addBreak(2, 200, green);
-                                    renderer.addBreak(200, 1001, blue);
-
-                                    clusterLayer.setRenderer(renderer);
-                                    map.addLayer(clusterLayer);
-
-                                    // close the info window when the map is clicked
-                                    map.on("click", cleanUp);
-                                    // close the info window when esc is pressed
-                                    map.on("key-down", function(e) {
-                                        if (e.keyCode === 27) {
-                                            cleanUp();
-                                        }
-                                    });
-                                }
-
-                                function cleanUp() {
-                                    map.infoWindow.hide();
-                                    clusterLayer.clearSingles();
-                                }
-
-                                function error(err) {
-                                    console.log("something failed: ", err);
-                                }
-
-                                // show cluster extents...
-                                // never called directly but useful from the console 
-                                window.showExtents = function() {
-                                    var extents = map.getLayer("clusterExtents");
-                                    if ( extents ) {
-                                        map.removeLayer(extents);
-                                    }
-                                    extents = new GraphicsLayer({ id: "clusterExtents" });
-                                    var sym = new SimpleFillSymbol().setColor(new Color([205, 193, 197, 0.5]));
-
-                                    arrayUtils.forEach(clusterLayer._clusters, function(c, idx) {
-                                        var e = c.attributes.extent;
-                                        extents.add(new Graphic(new Extent(e[0], e[1], e[2], e[3], map.spatialReference), sym));
-                                    }, this);
-                                    map.addLayer(extents, 0);
-                                }
-                            });
-                        });
-    </script>
-
-
-    <title>USCLife</title>
-    <title>USCLife</title>
-
- 
 </head>
 <body>
-    <div class="site">
-        <div class="header" title="Event's Detail Page">
-            <div class="slidebar-toggle" >
-                <img class="menu_icon" src="img/menu-alt-64.png"/>
-            </div>
-            <div class="title">
-            <span>USCLife</span>
-            </div>
-        </div>
-     <div data-role="page">
+    <div data-role="page" class="ui-page-theme-a">
 
-    <div data-role="header">
-    <a href="home.html" class="ui-btn ui-corner-all ui-shadow ui-icon-home ui-btn-icon-left">Home</a>
-    <h1>Event Details
-        </h1>
-    <a href="~/home.html" class="ui-btn ui-corner-all ui-shadow ui-icon-back ui-btn-icon-left">Back</a>
-  </div>
-
-   <div data-role="main" class="ui-content" align="center">
-    <p> 
-        		
-<div data-role="collapsible-set">
-	<div data-role="collapsible" data-collapsed="false">
-	<h3>Event Information</h3>
-	
-        <a href="profile.html">
-                 <img src="dining.png" width="100px" height="100px">
-          
-            <article>
-
-<header>
-<h1>Dining Event</h1>
-<p><time pubdate datetime="2009-10-09T14:28-08:00"></time></p>
-</header>
-
-<p>Venue : VKC 152 </p>
-                
-<p>Date : 13 Dec 2014</p>
-                
-<p>Time : 1:00 P.M.</p>
-                
-<p>...</p>
-
-<footer>
-<a href="?comments=1">Show comments...</a>
-</footer>
-
-</article>
-        </a>
-      
-       
-	</div>
-	
-	
-	<h3>Event on Map</h3>
-	<p>
+    <script type="text/javascript" src="http://cdn.jtsage.com/datebox/latest/jqm-datebox.core.min.js"></script>
+    <script type="text/javascript" src="http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js"></script>
         
-      <div data-dojo-type="dijit/layout/BorderContainer" 
-       data-dojo-props="design:'headline', gutters:false" 
-       style="width:50%;height:50%;margin:0px;">
+        <div class="menu-bar">
+         <ul>
+            <li><a href="index.html" id="home">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" class="menu-event-expand" style="background-color:#e3e3e3;">Events</a>
+                 <span class="menu-expand-btn ui-icon-plus ui-btn-icon-notext" style="width:3px; height: 3px;"></span>
+                 <ul style="display:none">
+                     <li><a href="myevent.html" id="profile_event">My Events</a></li>
+                     <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
+                     <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
+                     <li><a href="event_history.html" id="profile_event">History</a></li>
+                     <li><a href="createevent.html" id="profile_event">Create Event</a></li>
+                 </ul>
+            </li>
+            <li><a href="friend.html">Friends</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="signin.html" id="log-in">Log In</a></li>
+         </ul>
+     </div>   
+      
+      
+      <div class="header-container">
+         <div data-role="header" class="header" style="background-color:#424242; color:#fff; border: 0; padding: 13px;">
+            <a href="#menu" class="menu-btn ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-carat-l ui-btn-icon-notext" style="margin-top:5px; z-index: 10;"></a>
+            <div style="text-align:center">
+               <h3>Details</h3>
+            </div>
+            <a href="event_chat.html" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-btn-inline ui-icon-comment ui-btn-icon-notext" style="margin-top:5px; z-index: 10;"></a>
+         </div>
+      </div>
+ 
 
-    <div id="map" 
-         data-dojo-type="dijit/layout/ContentPane" 
-         data-dojo-props="region:'center'" class="panel">
+        <div data-role="main" class="ui-content eventdetail" style="padding-bottom: 100px;">
+            
+            <div class="c4_eventname" style="background-image: url(images/profile-bg.jpg);"> 
+                    <img src="images/fun.png">
+                    <h3>Wicked Musical</h3>
+                </div>
+            <div class="clearfix"></div>
+            
+            <div class="c_event4" style="margin-bottom: -20px;">
+                
+
+            <form method="post" action="demoform.asp">
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a field-name event-detail-field" style="width: 40%">
+                        <label style="line-height:30px"><strong>Date:</strong></label>
+                    </div>
+                    <div class="ui-block-b event-detail-value" style="width: 60%">
+                        <label style="line-height:30px">Jan 13, 2015</label>
+                    </div>
+                </div>
+                
+                <div class="ui-grid-a">
+                    <div class="ui-block-a event-detail-field" style="width: 40%">
+                        <label style="line-height:30px;"><strong>Time:</strong></label>
+                    </div>
+                    <div class="ui-block-b event-detail-value" style="width: 60%">
+                        <label style="line-height:30px">6:00 pm-9:30 pm</label>
+                    </div>
+                </div>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a event-detail-field" style="width: 40%">
+                        <label style="line-height:30px"><strong>Location:</strong></label>
+                    </div>
+                    <div class="ui-block-b event-detail-value" style="width: 60%">
+                        <label style="line-height:30px">Bovard Auditorium</label>
+                    </div>
+                </div>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a event-detail-field" style="width: 40%">
+                        <label style="line-height:30px"><strong>Open Seats:</strong></label>
+                    </div>
+                    <div class="ui-block-b event-detail-value" style="width: 60%">
+                        <label style="line-height:30px">100+</label>
+                    </div>
+                </div>
+                <div class="c4_detail">
+                    Come see the musical of the century! USC takes on Wicked!
+                    Tickets start at $25!
+                </div>
+                
+                <div stye="text-align: center; margin:0px auto;">
+                   <a href="index.html" class="ui-shadow ui-btn"
+                      style="position: fixed; display: block; bottom: -1px; margin: 0 -2em; font-size:15px; width: 100%; height: 20px; z-index: 2">Back</a>
+                </div>
+                <div style="clear: both"></div>
+                
+            </form>
+            </div>
+            
+            <div class="ui-block-a event-detail-field" style="width: 40%; margin-left: 2em">
+                <label style="line-height:30px"><strong>Attendants:</strong></label>
+            </div><br/><br/>
+            <div class="p-friend-div" style="margin-top: 0px; margin-bottom: 0px;">
+               <ol>
+                  <li><a href="friend_detail.html">
+                       <div style="text-align: center">
+                           <img src="images/girl.png"/><br/>
+                           <span style="font-size: 9pt; margin:0; padding: 0;">Julie</span>
+                       </div></a>
+                  </li>
+                  <li><a href="friend_detail.html">
+                       <div style="text-align: center">
+                           <img src="images/girl.png"/><br/>
+                           <span style="font-size: 9pt; margin:0; padding: 0;">Julie</span>
+                       </div></a>
+                  </li>
+                  <li><a href="friend_detail.html">
+                       <div style="text-align: center">
+                           <img src="images/girl.png"/><br/>
+                           <span style="font-size: 9pt; margin:0; padding: 0;">Julie</span>
+                       </div></a>
+                  </li>
+                  <li><a href="friend_detail.html">
+                       <div style="text-align: center">
+                           <img src="images/girl.png"/><br/>
+                           <span style="font-size: 9pt; margin:0; padding: 0;">Julie</span>
+                       </div></a>
+                  </li>
+                  <li style="">
+                       <a href="friend.html" class="ui-icon-carat-r ui-btn-icon-notext" style="width: 20px; height:20px; position:relative; top: -40px; left: 10px; z-index: 0;"></a>
+                  </li>
+               </ol>
+            </div>
+            
+            
+            <div class="ui-grid-b">
+                <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
+                       style="position: fixed; top: 50px; right: 10px; padding-right: 25px; font-size:15px; width: 20px; height: 15px; line-height: 15px; margin-right:0px; background-color: #8AE62E; color: white; text-shadow: none; font-weight: 900;">
+                        Join</a> 
+                <div data-role="popup" class="ui-corner-all ui-grid-b" id="myPopupDialog" style="padding: 10px; text-align: center; font-weight: bold">  
+                    <p>You joined the <span style="color: green">Wicked Musical</span> Event!</p>
+                     <a href="upcoming_event_highlight.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Okay</a>
+                     <br/>
+                     <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a>
+                     <br/>
+                     <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+                </div> 
+                <a type="label" id="count" value=""></a>
+              </div>
+            
+        </div>
     </div>
-
-
-    </p>
-	
-
-  <div data-role="main" class="ui-content">
-    <form method="post" action="demoform.asp">
-   <div data-role="main" class="ui-content">
-    <div data-role="controlgroup" data-type="vertical">
-      <a href="registered.html" class="ui-btn">Join Event</a> 
-      <a href="events.html" class="ui-btn">All Events</a>  
-      <a href="home.html" class="ui-btn">Home</a>
-    </div><br>
-    </form>
-  </div>
-</div>
-  
+    <script src="js/menu-bar.js"></script>
+    
 </body>
 </html>

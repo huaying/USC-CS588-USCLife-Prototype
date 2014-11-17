@@ -9,45 +9,126 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-    <title>USCLife</title>
+    <title>Feedback</title>
 </head>
 <body>
-    <div data-role="page" class="ui-page-theme-a" id="main-page">
-         <script src="./js/make-hearder.js"></script>
+    <div data-role="page" class="ui-page-theme-a no_login" id="feedback">
+        
+        <div class="menu-bar">
+         <ul>
+            <li><a href="index.html" id="home">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" class="menu-event-expand">Events</a>
+                 <span class="menu-expand-btn ui-icon-plus ui-btn-icon-notext" style="width:3px; height: 3px;"></span>
+                 <ul style="display:none">
+                     <li><a href="myevent.html" id="profile_event">My Events</a></li>
+                     <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
+                     <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
+                     <li><a href="event_history.html" id="profile_event">History</a></li>
+                     <li><a href="createevent.html" id="profile_event">Create Event</a></li>
+                 </ul>
+            </li>
+            <li><a href="friend.html">Friends</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html" style="background-color:#e3e3e3;">Feedback</a></li>
+            <li><a href="signin.html" id="log-in">Log In</a></li>
+         </ul>
+     </div>   
+      
+      
+      <div class="header-container">
+         <div data-role="header" class="header" style="background-color:#424242; color:#fff; border: 0; padding: 13px;">
+            <a href="#menu" class="menu-btn ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-carat-l ui-btn-icon-notext" style="margin-top:5px; z-index: 10;"></a>
+            <div style="text-align:center">
+               <h3>Feedback</h3>
+            </div>
+            <a class="thumb-box ui-corner-all" href=""><img class="thumb search-btn" src="images/search.png" style="z-index: 10; display:none;"/></a>
+         </div>
+      </div>
+        
 
-        <div data-role="main" class="ui-content feedback" >
-                <label>
-                    Choose the type of feedback <br>
-                    you would like to give to us:
-                </label>
-            <ul data-role="listview" data-inset="true">
-              Please select the platform you are using.
-                
-                <li><a href="feedback_good.html">
-                    <img src="images/apple1.png"/>
-                    <h2>Apple</h2>
-                </a>
-                </li>
-                <li><a href="feedback_good.html">
-                    <img src="images/android.png"/>
-                    <h2>Android</h2>
-                </a>
-                </li>
-                  <li><a href="feedback_good.html">
-                    <img src="images/win.png"/>
-                    <h2>Windows Phone</h2>
-                </a>
-                </li>
-                <li><a href="feedback_good.html">
-                    <img src="images/html5.png"/>
-                    <h2>Web browser</h2>
-                </a>
-                </li>
-             </ul>
+        <div data-role="main" class="ui-content feedback" style="padding:1.4em 1.8em; width: 80%;" >
+            <label style="font-size:1.3em; padding:.4em;text-align:center;">
+                We are happy to know you have
+                feedback about our app.
+            </label>
+            <div class="ui-grid-a">
+                <div class="ui-block-a" style="line-height:60px"><span>Ease of use:</span></div>
+                <div class="ui-block-b">
+                    <select>
+                        <option> Rating </option>
+                        <option> Excellent </option>
+                        <option> Very Good</option>
+                        <option> Good</option>
+
+                        <option>Satisfactory</option>
+                        <option>Poor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a" style="line-height:60px"><span>Content:</span></div>
+                <div class="ui-block-b">
+                    <select>
+                        <option> Rating </option>
+                        <option> Excellent </option>
+                        <option> Very Good</option>
+                        <option> Good</option>
+
+                        <option>Satisfactory</option>
+                        <option>Poor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a" style="line-height:60px"><span>Design</span></div>
+                <div class="ui-block-b">
+                    <select>
+                        <option> Rating </option>
+                        <option> Excellent </option>
+                        <option> Very Good</option>
+                        <option> Good</option>
+
+                        <option>Satisfactory</option>
+                        <option>Poor</option>
+                    </select>
+                </div>
+            </div>
+            <div class="ui-grid-a">
+                <div class="ui-block-a" style="line-height:60px"><span>Overall</span></div>
+                <div class="ui-block-b">
+                    <select>
+                        <option> Rating </option>
+                        <option> Excellent </option>
+                        <option> Very Good</option>
+                        <option> Good</option>
+
+                        <option>Satisfactory</option>
+                        <option>Poor</option>
+                    </select>
+                </div>
+            </div>
+            <textarea rows="4" cols="50" placeholder="Please leave comments here."></textarea>
+            <a href="#feedbackClosure" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-corner-all ui-shadow  ui-icon-check ui-btn-icon-left ">Submit Feedback</a>
+            <div data-role="popup" id="feedbackClosure" data-overlay-theme="a" data-theme="a" data-dismissible="false" >
+                    
+                <div role="main" class="ui-content" style="padding:0em 2em; width: 80%; text-align: center;">
+                    <h3 style="padding-bottom:1em">
+                        Thank you for the review!
+                        We are always looking to improve!
+                    </h3>
+                    <a href="index.html" class="ui-btn ui-corner-all ui-shadow  ui-icon-check ui-btn-icon-left">OK</a>
+                </div>
+            </div>
         </div>
 
+
+
     </div>
+
 </div>
 
+<script src="js/menu-bar.js"></script>
 </body>
 </html>
+

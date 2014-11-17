@@ -9,31 +9,58 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-    <script src="./js/make-hearder.js"></script>
-    <title>USCLife</title>
+    <title>Event History</title>
 </head>
 <body>
-   <div data-role="page" class="ui-page-theme-w" >
-         <script src="./js/make-hearder.js"></script>
+   <div data-role="page" class="ui-page-theme-w" id="event_history" >
+      
+      
+      <div class="menu-bar">
+         <ul>
+            <li><a href="index.html" id="home">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" class="menu-event-expand">Events</a>
+                 <span class="menu-expand-btn ui-icon-plus ui-btn-icon-notext" style="width:3px; height: 3px;"></span>
+                 <ul style="display:none">
+                     <li><a href="myevent.html" id="profile_event">My Events</a></li>
+                     <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
+                     <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
+                     <li><a href="event_history.html" id="profile_event" style="background-color:#e3e3e3;">History</a></li>
+                     <li><a href="createevent.html" id="profile_event">Create Event</a></li>
+                 </ul>
+            </li>
+            <li><a href="friend.html">Friends</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="signin.html" id="log-in">Log In</a></li>
+         </ul>
+     </div>   
+      
+      <div class="header-container">
+         <div data-role="header" class="header" style="background-color:#424242; color:#fff; border: 0; padding: 13px;">
+            <a href="#menu" class="menu-btn ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-carat-l ui-btn-icon-notext" style="margin-top:5px;"></a>
+            <div style="text-align:center">
+               <h3 style="">Event History</h3>
+            </div>
+            <a class="thumb-box ui-corner-all" href=""><img class="thumb search-btn" src="images/search.png"/></a>
+         </div>
+      </div>
+      
+      
+      <div class="category-bar">
+         <ol>
+            <li><a href="index.html"><img href="index.html" src="images/all.png"></a></li>
+            <li><a href="event_academic.html"><img  src="images/academic.png"></a></li>
+            <li><a href="event_sports.html"><img  src="images/sports.png"></a></li>
+            <li><a href="event_dinning.html"><img  src="images/dining.png"></a></li>
+            <li><a href="event_fun.html"><img src="images/fun.png"></a></li>
+            <li><a href="event_shopping.html"><img src="images/shopping.png"></a></li>
+         </ol>
+      </div>
+      
 
-        <div data-role="main" class="ui-content eventlist" id="event_history">
-            
-            
-          <div class="category-bar">
-               <ol>
-                  <li><img src="images/all.png"></li>
-                  <li><img src="images/academic.png"></li>
-                  <li><img src="images/sports.png"></li>
-                  <li><img src="images/dining.png"></li>
-                  <li><img src="images/fun.png"></li>
-                  <li><img src="images/shopping.png"></li>
-               </ol>
-            </div>   
-         
-         
-         <div style="clear:both"></div>
-         
-         
+        <div data-role="main" class="ui-content eventlist" >
+
          <ul data-role="listview" data-filter="true" data-inset="true" class="create-1-event-list" style="margin:0px; overflow: scroll">
                 <li>
                     <a href="eventdetail.html" style="padding-left:0px">
@@ -109,24 +136,9 @@
                 </li>
 
          </ul>
-        <script type="text/javascript">
-            
-            $(document).on('pagebeforeshow',function(){
-               changeTitle("Event History");
-               showCategories();
-               
-               $(".change-category img").off('click').on('click',function () {
-                  $(".category-bar").slideToggle(250);
-               });
-            
-               $(".category-bar ol li img").off('click').on('click',function () {              
-                  var this_image = $(this).attr("src");
-                  $(".change-category img").attr("src", this_image);
-               });
-            });
-        </script>
         </div>
         
-
+   <script src="js/menu-bar.js"></script> 
+    
     </body>
     </html>

@@ -17,10 +17,7 @@
 
 }
 
-img.pull-left{
-    width: 55px;
-    height: 55px;
-}
+
 
 
 
@@ -57,7 +54,7 @@ img.pull-left{
     position: absolute;
     top: 2px;
     left: 45px;
-    z-index: 1;
+    z-index: 3;
 }
 
 .change-category img{
@@ -69,7 +66,9 @@ img.pull-left{
 .category-bar {
     background-color:#555555;
     width: 100%;
-    display: none;
+    z-index: 1;
+    position: fixed;
+    height:50px;
 }
 
 .category-bar ol {
@@ -93,8 +92,4 @@ img.pull-left{
     -webkit-box-shadow: 3px 3px 5px #424242;
     box-shadow: 3px 3px 5px #424242;
 
-}
-
-.header-container {
-    position: relative;
 }

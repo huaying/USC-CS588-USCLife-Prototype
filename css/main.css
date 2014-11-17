@@ -1,5 +1,11 @@
 @import url('./alexa.css');
 @import url('./bella.css');
+@import url('./menu-bar.css');
+@import url('./category-bar.css');
+@import url('./profile.css');
+@import url('./friend-list.css');
+@import url('./chat.css');
+
 
 .ui-content {
     padding:0;
@@ -25,12 +31,12 @@ p {
     margin:0;
     position:relative;
     left:-4px;
+    padding:13px;
 }
 
 .thumb-box{
     padding:0;
     top:5px;
-    background-color:#1b1b1b !important;
     border:none !important;
     text-shadow:none !important;
     box-shadow: none !important;
@@ -145,77 +151,153 @@ p {
     right:0;
 }
 /* Profile */
+
+/*
 .profile .p-info {
-    margin:1em 2em 6em;;
+    margin:2.5em 2em 4.5em;;
+}
+*/
+
+.profile .p-info.edit{
+    margin:2.5em 0 0;
+    text-align:center;
 }
 .profile .p-info-b {
-    margin:2em;;
+    /*margin:0 2em 1em;*/
 }
+
+/*
 .profile .p-info img{
     margin:0 1.2em;
     width:25%;    
     max-width:89px;
 }
+*/
+
+/*
 .profile .p-info .btn-edit{
     position:absolute;
-    top:2.8em;
+    top:0;
     right:0;
 }
-
-.p-info-b h4,.p-info-b span{
+*/
+.profile .p-info .btn-uploadimg{
+    font-size:13px;
+    position: absolute;
+    right: 32%;
+    top: 13%;
+    padding: .3em;
+}
+/*
+.p-info h3{
+    line-height:36px;
+}
+.p-info p{
+    color:#616161;
+    font-weight:bold;
+}
+*/
+/*
+.p-info-b h4{
+    line-height:36px;
+}
+*/
+.p-info-b span{
     margin: 0;
-    line-height:48px;
+    color:#616161;
+    /*line-height:48px;*/
+    font-weight:bold;
 }
 
 .p-info-b .p-detail p{
-    color: #ccc;
-    padding:1.2em;
-    border: 1px solid #aaa;
+    color:#616161;
+    /*font-weight:bold;*/
+    /*line-height:48px;*/
+}
+.p-info-b label.check{
+    /*padding:.83em 2.5em;*/
+    /*top:2px;*/
+}
+.p-info-b .ui-block-a .ui-input-text{
+    /*margin: .5em 0 0 .25em;*/
+}
+.p-info-b  .ui-input-text{
+    /*margin: .5em .3em;*/
+}
+.p-info-b  textarea.ui-input-text{
+    margin: 0;
 }
 /* feedback */
 .feedback label{
     font-size:1.3em;
-    padding:.8em 1.6em;
+    padding:.4em;
     text-align:center;
     width:0 auto;
 }
-.feedback img{
-    width:30%;
-    max-width:90px;
-    float:left;
-}
-.feedback .ui-grid-b .ui-block-a {
-    text-align:right;
+.feedback {
+    margin:1.4em 1.8em;
 }
 .feedback .ui-grid-a .ui-block-a {
     text-align:center;
 }
 
 /*About Us*/
+.ui-content.aboutus{
+    overflow:hidden;
+}
 .aboutus {
     margin:2em;
 }
 .bold{
     font-weight:bold;
-    color:yellow;
+    color:rgb(247, 48, 56);
 }
 
-/* create event 2 */
+/* create event  */
 .c_event2,.c_event3,.c_event4{
-    padding: 2em;
+    padding: 1.8em;
 }
+.c_event2 label{
+    font-weight:bold;
+}
+.c_event2 .ui-grid-a>.ui-block-a,.c_event2 .ui-grid-a>.ui-block-b{
+    padding:4px;
+}
+
+.eventdetail .c4_eventname {
+    margin:0;
+    background-image: url(images/profile-bg2.jpg);
+    background-position: 77% 50%;
+    text-align: center;
+    text-shadow: none;
+    padding:10px;
+    color:#fff
+}
+
 .c4_eventname img{
-    margin: 0 1.2em 1em 0 ;
-    width:20%;
+    width:25%;
     max-width:72px;
+    margin: auto;
+    border: 5px solid white;
+    border-radius: 50%;
 }
 .c4_eventname h3{
+    font-size: 16pt;
     padding:.3em;
 }
-.c4_detail{
+.c4_detail,.c5_detail{
     word-spacing:3px;
-    padding:1em;
-    margin:1em 0;
-    border:1px solid #ccc;
+    padding:.8em;
+    margin:.8em 0;
+    border:2px solid #ccc;
     height: 4.5em;
+}
+
+
+.pop-up-btn {
+    width: 140px;
+    height: 10px;
+    padding:10px;
+    line-height: 10px;
+    font-size: 10pt;
 }

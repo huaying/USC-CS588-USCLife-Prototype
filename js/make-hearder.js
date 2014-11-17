@@ -56,23 +56,60 @@ var header = ''
             }
          }
         ,login = function(){
-            store.login = 1;          
+          var semail = $(‘#’email).val();
+          if(semail.length==0)
+          {
+            alert (“Email field cannot be empty”);
+            $(location).attr('href’,’signin.html');
+          }
+          else
+          {
+          if(validateEmail(semail))
+            {
+            $(location).attr('href','index.html');
+            store.login = 1;
+            }
+          else
+           {
+           alert("Enter a valid email address");
+           $(location).attr('href’,’signin.html');
+           }
+          }
+         }
         }
         ,logout = function(){
             delete store.login;
             $(location).attr('href','index.html');
         }
         ,cate_judge = function(){
-            var pageID = $.mobile.activePage.attr('id');
-            console.log(pageID);
-            if($.inArray(pageID,["main-page","ev_academic","ev_fun","ev_shopping","ev_sports","ev_dining"])!= -1){
+            var pageID = $.mobile.activePage.attr('id'),
+                eventRelated = [
+                    "main-page"
+                    ,"ev_academic"
+                    ,"ev_fun"
+                    ,"ev_shopping"
+                    ,"ev_sports"
+                    ,"ev_dining"
+                    ,"myevent"
+                    ,"upcoming_event"
+                    ,"event_history"
+                    ,"event_recommended"
+                    
+                    ],
+                title = $('#'+pageID).data('title');
+                    ;
+            if($.inArray(pageID,eventRelated)!= -1){
+                console.log(title);
+                if(typeof title !=="undefined"){
+                    changeTitle(title);
+                }
                 showCategories();
 
                 $(".change-category img").off('click').on('click',function () {
                     $(".category-bar").slideToggle(250);
                 });
                 $(".category-bar").slideToggle(250);
-                if(pageID == "main-page"){
+                if(pageID == "main-page" || pageID.substring(0,3)!="ev_"){
                     $(".change-category img").attr("src", "./images/all.png");
                 }else{
                     $(".change-category img").attr("src", "./images/"+pageID.substring(3)+".png");
@@ -109,4 +146,14 @@ var header = ''
     
     function showCategories() {
         $(".change-category").css("display", "block");
+    }
+
+    function validateEmail(email)
+    {
+      var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+      if( !emailReg.test( email ) ) {
+        return false;
+      } else {
+        return true;
+    }
     }

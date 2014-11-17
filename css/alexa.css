@@ -41,7 +41,7 @@
 /* Progress bar */
 .container {
     width: 101%;
-    margin: 0 auto;
+    margin: 10px auto;
 
 }
 
@@ -125,6 +125,7 @@ ol.progress-meter li.current:before {
 }
 ol.progress-meter li.current {
     color: black;
+    font-weight: bold;
     border-bottom-color: silver;
 }
 ol.progress-meter li.current:before {
