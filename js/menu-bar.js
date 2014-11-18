@@ -17,6 +17,9 @@ $(document).on('pagebeforecreate', function(){
     showMenu();
     showSearch();
     
+    $(".menu-btn").removeClass("ui-icon-carat-d");
+    $(".menu-btn").addClass("ui-icon-carat-l");
+    
     $(".menu-event-expand").unbind('click').bind('click', expandEventMenu);
     
     $(".menu-expand-btn").css("display", "none");
@@ -100,10 +103,17 @@ function showSearch() {
     
 }
 
-$.ajaxSetup({cache:true});
-$.ajax({
-    url: "./js/login.js",
-    dataType: "script",
-    async: false
-});
+   urls = [
+        "http://cdn.jtsage.com/datebox/latest/jqm-datebox.core.min.js",
+        "http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js",
+        "./js/login.js"
+        ];
 
+      $.ajaxSetup({cache:true});
+      for(i in urls){        
+          $.ajax({
+              url: urls[i],
+              dataType: "script",
+              async: false
+          });
+      }

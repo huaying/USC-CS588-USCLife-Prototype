@@ -125,9 +125,18 @@
                 <div class="ui-grid-b">
                     <div class="ui-block-a"><a href="menu.html" class="ui-shadow ui-btn" style="font-size:15px">Cancel</a></div>
                     <div class="ui-block-b"><a href="createevent3.html" class="ui-shadow ui-btn" style="font-size:15px">Back</a></div>
-                    <div class="ui-block-c"><a href="createevent5.html" class="ui-shadow ui-btn" style="font-size:15px">Submit</a></div>
+                    <div class="ui-block-c"><a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-shadow ui-btn" style="font-size:15px">Submit</a></div>
                 </div>
             </form>
+            <div data-role="popup" class="ui-corner-all ui-grid-b" id="popupDialog" style="padding: 10px; text-align: center; font-weight: bold">  
+                <p>You created <span style="color: green">Christmas Party!</span></p>
+                <a href="upcoming_event_highlight.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Okay</a>
+                <br/>
+                <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a>
+                <br/>
+                <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+            </div> 
+            <a type="label" id="count" value=""></a>
             </div>
 
         </div>

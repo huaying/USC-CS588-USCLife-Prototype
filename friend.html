@@ -49,7 +49,94 @@
 
         <div data-role="main" class="ui-content">
             <a href="addfriends.html" class="ui-btn">Search and Add Friends</a>
-                    
+            <style>
+                .friend_grid img{
+                    width:90%
+                }
+                .friend_grid {
+                    padding:1.6em;
+                    text-align:center;
+                }
+                .friend_grid>div>div{
+                    background:#efefef;
+                }
+                .friend_grid>div>div{
+                    padding:0.5em;
+                }
+                .friend_grid>div:nth-child(2n+1)>div:nth-child(2n+1),
+                .friend_grid>div:nth-child(2n)>div:nth-child(2n){
+                    background:#e0e0e0;
+                }
+                .friend_grid>div>div:hover,
+                .friend_grid>div:nth-child(2n+1)>div:hover:nth-child(2n+1),
+                .friend_grid>div:nth-child(2n)>div:hover:nth-child(2n){
+                    background:#999;
+                    cursor:pointer;
+                }
+            </style>
+            <div class="friend_grid">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                    <a href="friend_detail.html">
+                        <img src="images/jacob.png">
+                        <label>Jacob</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-b">
+                    <a href="friend_detail.html">
+                        <img src="images/pro1.png">
+                        <label>Dean</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-c">
+                    <a href="friend_detail.html">
+                        <img src="images/pro2.png">
+                        <label>Alexa</label>
+                    </a>
+                    </div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                    <a href="friend_detail.html">
+                        <img src="images/pro3.png">
+                        <label>Bella</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-b">
+                    <a href="friend_detail.html">
+                        <img src="images/pro4.png">
+                        <label>Jane</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-c">
+                    <a href="friend_detail.html">
+                        <img src="images/pro5.png">
+                        <label>Akshay</label>
+                    </a>
+                    </div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                    <a href="friend_detail.html">
+                        <img src="images/pro7.png">
+                        <label>Bruce</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-b">
+                    <a href="friend_detail.html">
+                        <img src="images/pro8.png">
+                        <label>Mike</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-c">
+                    <a href="friend_detail.html">
+                        <img src="images/pro9.png">
+                        <label>Ariel</label>
+                    </a>
+                    </div>
+                </div>
+            </div>   
+
             <div data-role="popup" class="ui-corner-all" id="del">
                 <div style="padding:20px 20px 14px">
                     <h3>Unfriend?</h3>
@@ -57,7 +144,7 @@
                     <button class="ui-btn ui-icon-delete ui-btn-icon-left ui-btn-inline">Cancel</button>
                 </div>
             </div>
-            <ul data-role="listview" data-inset="true" class="friend-list">
+            <ul data-role="listview" data-inset="true" class="friend-list" style="display:none">
                 <li>
                         <img src="images/jacob.png">
                         <h3>Name: Jacob Jone</h3>

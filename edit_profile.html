@@ -52,8 +52,31 @@
                
                 <img src="images/jacob.png">
                 <h3>Jacob Jones</h3>
-                <p>Year:<input type="text" name="fname" value="Senior">
-                <br>Major:<input type="text" name="fname" value="Computer Science"></p>
+               <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label style="line-height:60px"><strong>Year:</strong></label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select>
+                            <option selected="selected">Sophomore</option>
+                            <option>Junior</option>
+                            <option>Senior</option>
+                            <option>Graduate</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <label style="line-height:60px"><strong>Major:</strong></label>
+                    </div>
+                    <div class="ui-block-b">
+                        <select>
+                            <option selected="selected">Computer Science</option>
+                            <option>Electrical Engineering </option>
+                            <option>Chemical Engineering</option>
+                        </select>
+                    </div>
+                </div>
             </div>
             <div class="clearfix"></div>
 
@@ -93,8 +116,18 @@
                 </div>
                 
             </div>
-             <a href="profile_modified.html" class="ui-btn login-btn" style="font-size:15px" size="15">Done</a>
+            <a href="#feedbackClosure" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn login-btn" style="font-size:15px" size="15">Done</a>
         </div>
+        <div data-role="popup" id="feedbackClosure" data-overlay-theme="a" data-theme="a" data-dismissible="false" >
+            
+            <div role="main"  style="padding:1em 2em; width: 80%; text-align: center;">
+                <h3>
+                    Your profile looks awesome, Kudos :)!
+                </h3>
+                <a href="profile_modified.html" class="ui-btn ui-corner-all ui-shadow  ui-icon-check ui-btn-icon-left">OK</a>
+            </div>
+        </div>
+
         
     </div>
 </div>
