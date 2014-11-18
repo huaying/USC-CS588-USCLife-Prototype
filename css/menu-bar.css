@@ -1,6 +1,9 @@
 .header-container div h3{
     text-shadow: none;
 }
+.header-container .ui-btn{
+    border-style:none;
+}
 
 .thumb-box {
     background-color:transparent !important;
@@ -17,10 +20,11 @@
     top: 50px;
     left: -185px;
     height: 100%;
-    background-color: #424242;
+    background-color: whitesmoke;
     text-shadow: none;
     text-align: center;
     overflow: scroll;
+    font-size:20px;
 }
 
 .menu-bar ul {
@@ -103,12 +107,14 @@
 .ui-filterable{
     position: fixed;
     z-index:1;
-    top: -10px;
+    top: -20px;
     width:100%;
     background-color: #555555;
     display: table;
     margin: 0 auto;
     height:50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 

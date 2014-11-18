@@ -5,6 +5,8 @@
 @import url('./profile.css');
 @import url('./friend-list.css');
 @import url('./chat.css');
+@import url('./ion.rangeSlider-2.0.1/css/ion.rangeSlider.css');
+@import url('./ion.rangeSlider-2.0.1/css/ion.rangeSlider.skinFlat.css');
 
 
 .ui-content {
@@ -197,29 +199,13 @@ p {
     font-weight:bold;
 }
 */
-/*
-.p-info-b h4{
-    line-height:36px;
-}
-*/
-.p-info-b span{
+.p-info-b span,.p-info-b .p-detail p{
     margin: 0;
     color:#616161;
-    /*line-height:48px;*/
     font-weight:bold;
 }
 
-.p-info-b .p-detail p{
-    color:#616161;
-    /*font-weight:bold;*/
-    /*line-height:48px;*/
-}
 .p-info-b label.check{
-    /*padding:.83em 2.5em;*/
-    /*top:2px;*/
-}
-.p-info-b .ui-block-a .ui-input-text{
-    /*margin: .5em 0 0 .25em;*/
 }
 .p-info-b  .ui-input-text{
     /*margin: .5em .3em;*/
@@ -232,7 +218,7 @@ p {
     font-size:1.3em;
     padding:.4em;
     text-align:center;
-    width:0 auto;
+    width:auto;
 }
 .feedback {
     margin:1.4em 1.8em;
