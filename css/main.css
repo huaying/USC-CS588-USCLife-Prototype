@@ -153,13 +153,6 @@ p {
     right:0;
 }
 /* Profile */
-
-/*
-.profile .p-info {
-    margin:2.5em 2em 4.5em;;
-}
-*/
-
 .profile .p-info.edit{
     margin:2.5em 0 0;
     text-align:center;
@@ -168,21 +161,7 @@ p {
     /*margin:0 2em 1em;*/
 }
 
-/*
-.profile .p-info img{
-    margin:0 1.2em;
-    width:25%;    
-    max-width:89px;
-}
-*/
 
-/*
-.profile .p-info .btn-edit{
-    position:absolute;
-    top:0;
-    right:0;
-}
-*/
 .profile .p-info .btn-uploadimg{
     font-size:13px;
     position: absolute;
@@ -286,4 +265,11 @@ p {
     padding:10px;
     line-height: 10px;
     font-size: 10pt;
+}
+
+.btn-back {
+    color:white !important;
+    font-weight:normal !important;
+    border: 3px solid #EC8888 !important;
+
 }
