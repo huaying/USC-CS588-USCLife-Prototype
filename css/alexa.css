@@ -1,8 +1,5 @@
 /* Things I changed from main */
-* {
-    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif !important;
-    margin:0;
-}
+
 
 .c_event2,.c_event3,.c_event4{
     margin-top:-0.5em;
@@ -36,6 +33,18 @@
     height: 65px;
     padding-left: 15px;
     padding-top: 8px;
+}
+
+.create-cat {
+    font-weight: bold;
+    margin-left: -20px;
+    font-size: 18pt;
+}
+
+.create-ex {
+    margin-left: -20px;
+    color: #777;
+    
 }
 
 /* Progress bar */

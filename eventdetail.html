@@ -186,22 +186,30 @@
                 </ol>
             </div>
             <div class="ui-grid-b">
-                <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
+                <a href="#myPopupDialog" id="event_btn" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
                     style="position: fixed; top: 50px; right: 10px; padding-right: 25px; font-size:15px; width: 35px; height: 15px; line-height: 15px; margin-right:0px; background-color: #8AE62E; color: white; text-shadow: none; font-weight: 900;">
                     Join</a> 
                 <div data-role="popup" class="ui-corner-all ui-grid-b" id="myPopupDialog" style="padding: 10px; text-align: center; font-weight: bold">  
-                    <p>You joined the <span style="color: green">Wicked Musical</span> Event!</p>
-                    <a href="upcoming_event_highlight.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Okay</a>
-                    <br/>
-                    <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a>
-                    <br/>
-                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+                    <div id="popupadd">
+                        <p>You joined the <span style="color: green">Wicked Musical</span> Event!</p>
+                        <a href="upcoming_event_highlight.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Okay</a>
+                        <br/>
+                        <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a>
+                        <br/>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+                    </div>
+                    <div id="popupleave" style="display:none">
+                        <a href="#" onclick="window.location.replace('eventdetail.html')" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Leave</a><br>
+                        <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a><br>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+                    </div>
                 </div> 
                 <a type="label" id="count" value=""></a>
             </div>
         </div>
     </div>
     <script src="js/menu-bar.js"></script>
+    <script src="js/event_btn.js"></script>
 
 </body>
 </html>

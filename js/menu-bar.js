@@ -6,7 +6,7 @@ $(document).on('pagebeforecreate', function(){
     slideLeft();
     resetBars();
     
-    $(document).find('a[href="eventdetail.html"]').attr('data-ajax','false');
+    $(document).find('a[href^="eventdetail.html"]').attr('data-ajax','false');
     $(document).find('a[href="index.html"]').attr('data-ajax','false');
     $(document).find('a[href="event_academic.html"]').attr('data-ajax','false');
     $(document).find('a[href="event_sports.html"]').attr('data-ajax','false');
@@ -232,8 +232,6 @@ function startDown() {
         "http://cdn.jtsage.com/datebox/latest/jqm-datebox.core.min.js",
         "http://dev.jtsage.com/cdn/datebox/latest/jqm-datebox.mode.flipbox.min.js",
         "./js/login.js",
-        "./css/ion.rangeSlider-2.0.1/js/ion-rangeSlider/ion.rangeSlider.min.js",
-        "./css/ion.rangeSlider-2.0.1/js/moment.min.js"
         ];
 
       $.ajaxSetup({cache:true});
