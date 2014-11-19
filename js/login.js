@@ -63,13 +63,12 @@ $(document).off('pagebeforeshow').on('pagebeforeshow', function(){
     $(page).find('.menu-bar>ul').find('#log-in').remove();
                      
     if(Auth.check()){
-        $(page).find('.menu-bar>ul').append('<li><a href="#" style="background-color: #35D4D4;color: white;" class="logout-btn">Log Out</a></li>');
+        $(page).find('.menu-bar>ul').append('<li><a href="#" style="background-color: #555555;color: white;" class="logout-btn">Log Out</a></li>');
     }else{
         $(page).find('.menu-bar>ul').append('<li><a href="signin.html" id="log-in">Log In</a></li>');
     }
 
     $('.login-btn').off('click').on('click',function(){
-        Auth.login();
         if(!$('#email').val()){
             $('#email_error').show();
         }else{
@@ -82,6 +81,7 @@ $(document).off('pagebeforeshow').on('pagebeforeshow', function(){
         }
         
         if($('#email').val() && $('#passwd').val()){
+            Auth.login();
             location.href = redir_page;
         }
     });

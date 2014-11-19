@@ -10,7 +10,13 @@
     <link rel="stylesheet" href="./css/main.css">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
-
+    <style>
+    
+p.two {
+    border-style: solid;
+    border-width: medium;
+}    
+    </style>
     <title>Event Chat</title>
 
 </head>
@@ -62,7 +68,7 @@
             <div class="clearfix"></div>
             
             <div class="c_event4" style="margin-bottom: -20px;">
-                
+                <div>
                 
                 <div class="chat-box chat-box-left">
                     <img src="images/jacob.png"/>
@@ -81,10 +87,7 @@
                         <span>Nov 10, 2014 at 1:48pm</span>
                     </div>
                 </div>
-                
                 <div style="clear:both"></div>
-                
-                
                 <div class="chat-box chat-box-left">
                     <img src="images/jacob.png"/>
                     <div>
@@ -103,26 +106,32 @@
                         <span>Nov 10, 2014 at 2:10pm</span>
                     </div>
                 </div>
+            
+            
+            <div style="clear:both"></div>
+            
+            </div>
+    <div class="input-chat" style=" padding:10px; background-color: #eeeeee;
+    margin-bottom: 50px; margin-left: 15px;   ">
+            
                 
+                
+<div class="ui-block-a">
+     <input type="text" value="" id="text" value="text" style="width:250px; padding:3px " placeholder="Enter text"/></div>
+<div class="ui-block-b">
+     <input type="submit" value="Send"  style="width:auto; background-color:#832345; padding:3px "/>
+</div>
+
+              
+          
+            </div>
                 <div style="clear:both"></div>
-                
-                
-                
-                <div class="input-chat">
-                    <input type="text" value="">
-                    <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-forward ui-btn-icon-notext"
-                       style="left: 103%; bottom: 50px;"></a>
-                </div>
-                
-                <div style="clear:both"></div>
-                
-                
                 <div class="ui-grid-b">
-                    <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
+                    <a href="#myPopupDialog" dat3-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
                        style="position: fixed; top: 50px; right: 10px; padding-right: 25px; font-size:15px; width: 35px; height: 15px; line-height: 15px; margin-right:0px; background-color: #8AE62E; color: white; text-shadow: none; font-weight: 900;">
                         Join</a> 
                 
-                <div data-role="popup" class="ui-corner-all ui-grid-b" id="myPopupDialog" style="padding: 10px; text-align: center; font-weight: bold;">  
+            <div data-role="popup" class="ui-corner-all ui-grid-b" id="myPopupDialog" style="padding: 10px; text-align: center; font-weight: bold;">  
                     <p>You joined the <span style="color: green">Wicked Musical</span> Event!</p>
                      <a href="upcoming_event.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Okay</a>
                      <br/>

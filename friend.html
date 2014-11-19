@@ -18,9 +18,9 @@
          <ul>
             <li><a href="index.html" id="home">Home</a></li>
             <li><a href="profile.html">Profile</a></li>
-            <li><a href="#" class="menu-event-expand">Events</a>
+            <li><a href="#" class="menu-event-link">Events</a>
                  <span class="menu-expand-btn ui-icon-plus ui-btn-icon-notext" style="width:3px; height: 3px;"></span>
-                 <ul style="display:none">
+                 <ul style="display:none" class="menu-event-expand">
                      <li><a href="myevent.html" id="profile_event">My Events</a></li>
                      <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
                      <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
@@ -28,12 +28,17 @@
                      <li><a href="createevent.html" id="profile_event">Create Event</a></li>
                  </ul>
             </li>
-            <li><a href="friend.html" style="background-color:#e3e3e3;">Friends</a></li>
+            <li><a href="#" class="menu-friend-link">Friends</a>
+                <ul class="menu-friend-expand">
+                     <li><a href="friend.html" id="profile_event" style="color:white; background-color: #35D4D4;">My Friends</a></li>
+                     <li><a href="addfriends.html" id="profile_event">Add Friends</a></li>
+                 </ul>
+            </li>
             <li><a href="about.html">About</a></li>
             <li><a href="feedback.html">Feedback</a></li>
             <li><a href="signin.html" id="log-in">Log In</a></li>
          </ul>
-     </div>   
+        </div>   
       
       
       <div class="header-container">
@@ -47,8 +52,19 @@
       </div>
       
 
-        <div data-role="main" class="ui-content">
-            <a href="addfriends.html" class="ui-btn">Search and Add Friends</a>
+        <div data-role="main" class="ui-content friend_list">
+            <style>
+            .friend_list .ui-filterable div {
+                padding:0.5em auto;
+            }
+            .friend_list .ui-filterable{
+                position:relative;
+                top:0px;
+                background: #ddd;
+            }
+         </style>
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="Search friends..." data-inset="true" class="create-1-event-list" style="margin:0px;">
+            </ul>
             <style>
                 .friend_grid img{
                     width:90%
@@ -79,62 +95,65 @@
             </style>
             <div class="friend_grid">
                 <div class="ui-grid-b">
-                    <div class="ui-block-a">
-                    <a href="Saloniprofile.html">
-                        <img src="images/saloni_round.gif" style="height:100px">
-                        <label>Saloni</label>
+                    
+                    <div class="ui-block-c" >
+                    <a href="akshayprofile.html">
+                        <img src="images/akshay_round.gif"  style="height:100px; width:100px">
+                        <label>Akshay</label>
                     </a>
                     </div>
-                    <div class="ui-block-b">
-                    <a href="DeanProfile.html">
-                        <img src="images/dean_round.gif" style="height:100px">
-                        <label>Dean</label>
-                    </a>
-                    </div>
-                    <div class="ui-block-c">
-                    <a href="Alexaprofile.html">
-                        <img src="images/alexa_round.gif" style="height:100px">
+                    <div class="ui-block-c" > 
+                    <a href="Alexaprofile.html" >
+                        <img src="images/alexa_round.gif" style="height:100px; width:100px">
                         <label>Alexa</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-c" >
+                    <a href="friend_detail.html">
+                        <img src="images/pro9.png"  style="height:100px; width:100px">
+                        <label>Ariel</label>
                     </a>
                     </div>
                 </div>
                 <div class="ui-grid-b">
-                    <div class="ui-block-a">
+                    <div class="ui-block-c" >
                     <a href="Bellaprofile.html">
-                        <img src="images/bella_round.gif" style="height:100px">
+                        <img src="images/bella_round.gif"  style="height:100px; width:100px">
                         <label>Bella</label>
                     </a>
                     </div>
-                    <div class="ui-block-b">
+                    <div class="ui-block-c">
                     <a href="friend_detail.html">
-                        <img src="images/pro4.png" style="height:100px">
+                        <img src="images/pro7.png"  style="height:100px; width:100px">
+                        <label>Bruce</label>
+                    </a>
+                    </div>
+                    <div class="ui-block-c">
+                    <a href="DeanProfile.html">
+                        <img src="images/dean_round.gif"  style="height:100px; width:100px">
+                        <label>Dean</label>
+                    </a>
+                    </div>
+                    
+                    
+                </div>
+                <div class="ui-grid-b" style="height:150px">
+                    <div class="ui-block-c">
+                    <a href="friend_detail.html">
+                        <img src="images/pro4.png" >
                         <label>Jane</label>
                     </a>
                     </div>
                     <div class="ui-block-c">
-                    <a href="akshayprofile.html">
-                        <img src="images/akshay_round.gif" style="height:100px">
-                        <label>Akshay</label>
-                    </a>
-                    </div>
-                </div>
-                <div class="ui-grid-b">
-                    <div class="ui-block-a">
                     <a href="friend_detail.html">
-                        <img src="images/pro7.png" style="height:100px">
-                        <label>Bruce</label>
-                    </a>
-                    </div>
-                    <div class="ui-block-b">
-                    <a href="friend_detail.html">
-                        <img src="images/pro8.png" style="height:100px">
+                        <img src="images/pro8.png">
                         <label>Mike</label>
                     </a>
                     </div>
                     <div class="ui-block-c">
-                    <a href="friend_detail.html">
-                        <img src="images/pro9.png" style="height:100px">
-                        <label>Ariel</label>
+                    <a href="Saloniprofile.html">
+                        <img src="images/saloni_round.gif" >
+                        <label>Saloni</label>
                     </a>
                     </div>
                 </div>
