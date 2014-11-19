@@ -18,41 +18,41 @@
     <div data-role="page" class="ui-page-theme-a" id="profile">
 
         <div class="menu-bar">
-            <ul>
-                <li><a href="index.html" id="home">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="#" class="menu-event-link">Events</a>
-                    <span class="menu-expand-btn ui-icon-plus ui-btn-icon-notext" style="width:3px; height: 3px;"></span>
-                    <ul style="display:none" class="menu-event-expand">
-                        <li><a href="myevent.html" id="profile_event">My Events</a></li>
-                        <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
-                        <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
-                        <li><a href="event_history.html" id="profile_event">History</a></li>
-                        <li><a href="createevent.html" id="profile_event">Create Event</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" class="menu-friend-link">Friends</a>
-                    <ul class="menu-friend-expand">
-                        <li><a href="friend.html" id="profile_event" style="color:white; background-color: #35D4D4;">My Friends</a></li>
-                        <li><a href="addfriends.html" id="profile_event">Add Friends</a></li>
-                    </ul>
-                </li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="feedback.html">Feedback</a></li>
-                <li><a href="signin.html" id="log-in">Log In</a></li>
-            </ul>
-        </div>   
-
-
-        <div class="header-container">
-            <div data-role="header" class="header" style="background-color:#424242; color:#fff; border: 0; padding: 13px;">
-                <a href="#menu" class="menu-btn ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-carat-l ui-btn-icon-notext" style="margin-top:5px; z-index: 10;"></a>
-                <div style="text-align:center">
-                    <h3>Friend Details</h3>
-                </div>
+         <ul>
+            <li><a href="index.html" id="home">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" class="menu-event-link">Events</a>
+                 <span id="menu-event-expand-btn" class="menu-expand-btn ui-icon-plus ui-btn-icon-notext"></span>
+                 <ul style="display:none" class="menu-event-expand">
+                     <li><a href="myevent.html" id="profile_event">My Events</a></li>
+                     <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
+                     <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
+                     <li><a href="event_history.html" id="profile_event">History</a></li>
+                     <li><a href="createevent.html" id="profile_event">Create Event</a></li>
+                 </ul>
+            </li>
+            <li><a href="#" class="menu-friend-link">Friends</a>
+                <span id="menu-friend-expand-btn" class="menu-expand-btn ui-icon-plus ui-btn-icon-notext"></span>
+                <ul class="menu-friend-expand">
+                     <li><a href="friend.html" id="profile_event" style="color:white; background-color: #35D4D4;">My Friends</a></li>
+                     <li><a href="addfriends.html" id="profile_event">Add Friends</a></li>
+                 </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="signin.html" id="log-in">Log In</a></li>
+         </ul>
+        </div>    
+      
+      
+      <div class="header-container">
+         <div data-role="header" class="header" style="background-color:#424242; color:#fff; border: 0; padding: 13px;">
+            <a href="#menu" class="menu-btn ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-carat-l ui-btn-icon-notext" style="margin-top:5px; z-index: 10;"></a>
+            <div style="text-align:center">
+               <h3>Dean's Profile</h3>
             </div>
-        </div>
-
+         </div>
+      </div>
 
         <div data-role="main" class="ui-content profile" >
             <div class="p-info" style="background: url(images/profile-bg.jpg);background-position: 60% 71%;"> 
@@ -80,7 +80,7 @@
                     <div class="ui-block-a"><h4>Email:</h4></div>
                 </div>
                 <div class="ui-grid-a ui-response">
-                    <div class="ui-block-a"><span>Dean@usc.edu</span></div>    
+                    <div class="ui-block-a"><span>dean@usc.edu</span></div>    
                 </div>
 
 
@@ -172,7 +172,7 @@
 
                     <div style="text-align: center; margin:0px auto;">
                         <a href="javascript:history.back();" class="ui-shadow ui-btn btn-back"
-                            style="position: fixed; background-color:#FF5824;  padding:10px;   display: block; bottom: -1px; margin: 10 -2em; font-size:18px; font-color:white; width:50px; height: 20px; z-index: 2"> Back</a>
+                            style="position: fixed; background-color:#FF5824;  padding:10px;   display: block; bottom: -1px; margin: 5px -2em; font-size:15px; color:white; width:50px; height: 20px; text-shadow: none; z-index: 2">Back</a>
                     </div>
                 </div>
 
@@ -188,11 +188,11 @@
                             <br/>
                         </div> 
                         <script>
-                            $('#add_control').text('Remove').css({'background':'red','width':'60px'});
+                            $('#add_control').text('Remove').css({'background':'red','width':'80px', "margin-right": "-20px"});
                             $('#add_text').text('remove');
                             function addOrRemove(){
                                 if($('#add_control').text()=='Add'){
-                                    $('#add_control').text('Remove').css({'background':'red','width':'60px'});
+                                    $('#add_control').text('Remove').css({'background':'red','width':'80px', "margin-right": "-20px"});
                                     $('#add_text').text('remove');
                                     localStorage.bruce = true;
                                 }else{

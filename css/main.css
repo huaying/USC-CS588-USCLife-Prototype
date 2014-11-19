@@ -158,7 +158,7 @@ p {
     text-align:center;
 }
 .profile .p-info-b {
-    /*margin:0 2em 1em;*/
+    padding-bottom:4em;
 }
 
 .profile .ui-checkbox .ui-btn{
@@ -275,4 +275,10 @@ p {
     font-weight:normal !important;
     border: 3px solid #EC8888 !important;
 
+}
+
+.edit_detail .event_name{
+    
+}
+.edit_detail .event_name .ui-input-text{
 }

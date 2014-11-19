@@ -6,7 +6,7 @@ $(document).on('pagebeforecreate', function(){
     slideLeft();
     resetBars();
     
-    $(document).find('a[href^="eventdetail.html"]').attr('data-ajax','false');
+    $(document).find('a[href="eventdetail.html"]').attr('data-ajax','false');
     $(document).find('a[href="index.html"]').attr('data-ajax','false');
     $(document).find('a[href="event_academic.html"]').attr('data-ajax','false');
     $(document).find('a[href="event_sports.html"]').attr('data-ajax','false');
@@ -21,31 +21,26 @@ $(document).on('pagebeforecreate', function(){
     $(document).find('a[href="eventdetail_dining.html"]').attr('data-ajax','false');
     
     $('#event-academic').on('pageinit', function() {
-        console.log("doc ready");
         startDown();
         $(".ui-filterable").css("top", "50px");
     });
     
     $('#event-sports').on('pageinit', function() {
-    	console.log("doc ready");
         startDown();
         $(".ui-filterable").css("top", "50px");
     });
     
     $('#event-dining').on('pageinit', function() {
-    	console.log("doc ready");
         startDown();
         $(".ui-filterable").css("top", "50px");
     });
     
     $('#event-fun').on('pageinit', function() {
-    	console.log("doc ready");
         startDown();
         $(".ui-filterable").css("top", "50px");
     });
     
     $('#event-shopping').on('pageinit', function() {
-    	console.log("doc ready");
         startDown();
         $(".ui-filterable").css("top", "50px");
     });
@@ -146,7 +141,7 @@ function resetBars() {
     $(".time-slider").css("top", "-20px");
 	$(".ui-filterable").css("top", "-20px");
     $(".btn-edit").css("top", "50px");
-    $(".event-details-plus").css("top", "70px");
+    $(".event-details-plus").css("top", "60px");
     $(".ui-content").css("margin-top", "48px");
     
     $(".menu-btn").removeClass("ui-icon-carat-d");
@@ -212,7 +207,7 @@ function slideUp() {
 	$(".date-slider").animate({top: "-20px"}, "fast");
     $(".time-slider").animate({top: "-20px"}, "fast"); 
     $(".btn-edit").animate({top: "50px"} ,"fast");
-    $(".event-details-plus").animate({top: "70px"}, "fast");
+    $(".event-details-plus").animate({top: "60px"}, "fast");
     $(".ui-content").animate({marginTop: "48px"}, "fast");
 }
 
@@ -224,7 +219,7 @@ function startDown() {
 	//$(".ui-filterable").css("top", "210px");
     $(".btn-edit").css("top", "180px");
     $(".event-details-plus").css("top", "180px");
-    $(".ui-content").css("marginTop", "275px");
+    $(".ui-content").css("marginTop", "118px");
 }
 
 
