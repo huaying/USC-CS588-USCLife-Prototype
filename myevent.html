@@ -20,25 +20,31 @@
         <script src="./css/ion.rangeSlider-2.0.1/js/moment.min.js"></script>
         
         <div class="menu-bar">
-            <ul>
-               <li><a href="index.html" id="home">Home</a></li>
-               <li><a href="profile.html">Profile</a></li>
-               <li><a href="#" class="menu-event-expand">Events</a>
-                    <span class="menu-expand-btn ui-icon-plus ui-btn-icon-notext" style="width:3px; height: 3px;"></span>
-                    <ul>
-                        <li><a href="myevent.html" id="profile_event" style="background-color:#e3e3e3; color:black">My Events</a></li>
-                        <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
-                        <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
-                        <li><a href="event_history.html" id="profile_event">History</a></li>
-                        <li><a href="createevent.html" id="profile_event">Create Event</a></li>
-                    </ul>
-               </li>
-               <li><a href="friend.html">Friends</a></li>
-               <li><a href="about.html">About</a></li>
-               <li><a href="feedback.html">Feedback</a></li>
-               <li><a href="signin.html" id="log-in">Log In</a></li>
-            </ul>
-        </div>
+         <ul>
+            <li><a href="index.html" id="home">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="#" class="menu-event-link">Events</a>
+                 <span id="menu-event-expand-btn" class="menu-expand-btn ui-icon-minus ui-btn-icon-notext"></span>
+                 <ul class="menu-event-expand">
+                     <li><a href="myevent.html" id="profile_event" style="color:white; background-color: #35D4D4;">My Events</a></li>
+                     <li><a href="recomemdedevents.html" id="profile_event">Recommended</a></li>
+                     <li><a href="upcoming_event.html" id="profile_event">Upcoming</a></li>
+                     <li><a href="event_history.html" id="profile_event">History</a></li>
+                     <li><a href="createevent.html" id="profile_event">Create Event</a></li>
+                 </ul>
+            </li>
+            <li><a href="#" class="menu-friend-link">Friends</a>
+                <span id="menu-friend-expand-btn" class="menu-expand-btn ui-icon-plus ui-btn-icon-notext"></span>
+                <ul style="display:none" class="menu-friend-expand">
+                     <li><a href="friend.html" id="profile_event">My Friends</a></li>
+                     <li><a href="addfriends.html" id="profile_event">Add Friends</a></li>
+                 </ul>
+            </li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="signin.html" id="log-in">Log In</a></li>
+         </ul>
+        </div>  
 
 
         <div class="header-container">
@@ -47,24 +53,22 @@
               <div style="text-align:center">
                  <h3 style="">My Events</h3>
               </div>
-              <a class="thumb-box ui-corner-all" href=""><img class="thumb search-btn" src="images/search.png"/></a>
-              <div class="change-category" style="display:none"><img src="images/all.png"></div>
+              <a href="#" class="search-btn ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-btn-inline ui-icon-search ui-btn-icon-notext" style="margin-top:5px;"></a>
            </div>
         </div>
       
         <div class="category-bar">
            <ol>
-              <li><a href="index.html"><img style="border: 2px solid yellow;" href="upcoming_event.html" src="images/all.png"></a></li>
-              <li><a href="event_academic.html"><img src="images/academic.png"></a></li>
-              <li><a href="event_sports.html"><img src="images/sports.png"></a></li>
-              <li><a href="event_dinning.html"><img  src="images/dining.png"></a></li>
-              <li><a href="event_fun.html"><img src="images/fun.png"></a></li>
-              <li><a href="event_shopping.html"><img src="images/shopping.png"></a></li>
+              <li><a href="index.html"><img href="index.html" style="border: 2px solid yellow;" src="images/all2.png"></a></li>
+              <li><a href="event_academic.html"><img  src="images/academic2.png"></a></li>
+              <li><a href="event_sports.html"><img  src="images/sports2.png"></a></li>
+              <li><a href="event_dinning.html"><img  src="images/dining2.png"></a></li>
+              <li><a href="event_fun.html"><img src="images/fun2.png"></a></li>
+              <li><a href="event_shopping.html"><img src="images/shopping2.png"></a></li>
            </ol>
         </div>
-        
-        
-        
+ 
+        <div href="#"class="expand-advanced-btn ui-icon-carat-d ui-btn-icon-notext"></div>
         
         <!-- Date slider -->
         <div class="date-slider slider-box">
@@ -78,10 +82,10 @@
                 type: "dobule",
                 hide_min_max: true,
                 hide_from_to: false,
-                min: +moment().subtract(1, "months").format("X"),
+                min: +moment().format("X"),
                 max: +moment().add(6, "months").format("X"),
                 from: +moment().format("X"),
-                to: +moment().add(4, "months").format("X"),
+                to: +moment().add(6, "months").format("X"),
                 prettify: function (num) {
                     return moment(num, "X").format("LL");
                 }
@@ -99,7 +103,7 @@
             $("#time-range").ionRangeSlider({
                 type: "double",
                 grid: false,
-                from: 9,
+                from: 0,
                 hide_min_max: true,
                 hide_from_to: false,
                 values: [
@@ -131,18 +135,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="eventdetail_sports.html" style="padding-left:0px">
-                        <h3 class="event-header">
-                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/sports.png">
-                        <div class="pull-left">
-                            <div class="event-name">Lakers vs Bulls</div>
-                            <div class="event-loc">Staples Center</div>
-                            <div class="event-date">Jan 13, 2015 &nbsp; 7:00pm - 10:30pm</div>
-                        </div>
-                    </h3>
-                    </a>
-                </li>
-                <li>
                     <a href="eventdetail_dining.html" style="padding-left:0px">
                         <h3 class="event-header">
                         <img class="pull-left" style= "width: 50px; height: 50px" src="images/dining.png">
@@ -166,18 +158,7 @@
                     </h3>
                     </a>
                 </li>
-                <li>
-                    <a href="eventdetail.html" style="padding-left:0px">
-                        <h3 class="event-header">
-                        <img class="pull-left" style= "width: 50px; height: 50px" src="images/fun.png">
-                        <div class="pull-left">
-                            <div class="event-name">Taylor Swift Concert</div>
-                            <div class="event-loc">L.A. Live</div>
-                            <div class="event-date">Jan 14, 2015 &nbsp; 6:30pm - 9:30pm</div>
-                        </div>
-                    </h3>
-                    </a>
-                </li>
+                
                 <li>
                     <a href="eventdetail.html" style="padding-left:0px">
                         <h3 class="event-header">

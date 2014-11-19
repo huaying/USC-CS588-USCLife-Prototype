@@ -137,30 +137,35 @@
                     </div>
 
                 <div>
-                    <a href="#friend_add" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
-                        style="position: fixed; top: 50px; right: 10px; padding-right: 25px; font-size:15px; width: 37px; height: 15px; line-height: 15px; margin-right:0px; background-color: #8AE62E; color: white; text-shadow: none; font-weight: 900;">
-                        ADD</a> 
+                    <a href="#friend_add"  id="add_control"  data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
+                        style="position: fixed; top: 50px; right: 10px; padding-right: 25px; font-size:15px; width: 37px; height: 15px; line-height: 15px; margin-right:0px; background-color: #8AE62E; color: white; text-shadow: none; font-weight: 900;">Add</a> 
                     <div data-role="popup" class="ui-corner-all ui-grid-b" id="friend_add" style="padding:10px 10px 0px; text-align: center; font-weight: bold">  
-                    <p>Would you like to add this friend?</p>
-                        <a href="friend_detail2.html"   data-transition="fade" class="ui-btn ui-shadow ui-btn-w pop-up-btn" style="margin:1.5em auto"  >Okay</a>
+                        <p>Would you like to <span id="add_text">add</span> this friend?</p>
+                        <a href="#"   data-rel="back"  onclick="addOrRemove()"  data-transition="fade" class="ui-btn ui-shadow ui-btn-w pop-up-btn" style="margin:1.5em auto"  >Okay</a>
                         <a href="friend_detail.html" class="ui-btn ui-shadow  ui-btn-w pop-up-btn" style="margin:0 auto" data-rel="">Cancel</a>
                         <br/>
                     </div> 
                 </div>
-        <div data-role="popup" class="ui-corner-all ui-grid-b" id="friend_addsuccess" style="padding: 10px; text-align: center; font-weight: bold">  
-                    <p>You and <span style="color:red">Bruce Lee</span> are friends!</p>
-                    <a href="friend_detail2.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" style="margin:0 15px" data-rel="">Okay</a>
-                    <br/>
-                </div> 
 
             </div>
             <script>
-                function addSuccess(){
-                    $(document).on('popupafterclose',function(){
-                        $.mobile.pushStateEnabled = false;
-                        $('#friend_addsuccess').popup('open');
-                        $(document).off('popupafterclose');
-                    });
+                if(typeof localStorage.bruce === "undefined"){
+                        $('#add_control').text('Add').css({'background':'#8AE62E','width':'37px'});
+                        $('#add_text').text('add');
+                }else{
+                        $('#add_control').text('Remove').css({'background':'red','width':'60px'});
+                        $('#add_text').text('remove');
+                }
+                function addOrRemove(){
+                    if($('#add_control').text()=='Add'){
+                        $('#add_control').text('Remove').css({'background':'red','width':'60px'});
+                        $('#add_text').text('remove');
+                        localStorage.bruce = true;
+                    }else{
+                        $('#add_control').text('Add').css({'background':'#8AE62E','width':'37px'});
+                        $('#add_text').text('add');
+                        delete localStorage.bruce;
+                    }
                 }
             </script>
         </div>

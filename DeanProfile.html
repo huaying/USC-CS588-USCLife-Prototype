@@ -178,6 +178,31 @@
 
 
             </div>
+                    <div>
+                        <a href="#friend_add"  id="add_control"  data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
+                            style="position: fixed; top: 50px; right: 10px; padding-right: 25px; font-size:15px; width: 37px; height: 15px; line-height: 15px; margin-right:0px; background-color: #8AE62E; color: white; text-shadow: none; font-weight: 900;">Add</a> 
+                        <div data-role="popup" class="ui-corner-all ui-grid-b" id="friend_add" style="padding:10px 10px 0px; text-align: center; font-weight: bold">  
+                            <p>Would you like to <span id="add_text">add</span> this friend?</p>
+                            <a href="#"   data-rel="back"  onclick="addOrRemove()"  data-transition="fade" class="ui-btn ui-shadow ui-btn-w pop-up-btn" style="margin:1.5em auto"  >Okay</a>
+                            <a href="friend_detail.html" class="ui-btn ui-shadow  ui-btn-w pop-up-btn" style="margin:0 auto" data-rel="">Cancel</a>
+                            <br/>
+                        </div> 
+                        <script>
+                            $('#add_control').text('Remove').css({'background':'red','width':'60px'});
+                            $('#add_text').text('remove');
+                            function addOrRemove(){
+                                if($('#add_control').text()=='Add'){
+                                    $('#add_control').text('Remove').css({'background':'red','width':'60px'});
+                                    $('#add_text').text('remove');
+                                    localStorage.bruce = true;
+                                }else{
+                                    $('#add_control').text('Add').css({'background':'#8AE62E','width':'37px'});
+                                    $('#add_text').text('add');
+                                    delete localStorage.bruce;
+                                }
+                            }
+                        </script>
+                    </div>
         </div>
         <script src="js/menu-bar.js"></script>
 
