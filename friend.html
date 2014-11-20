@@ -61,7 +61,7 @@
             .friend_list .ui-filterable{
                 position:relative;
                 top:0px;
-                background: #ddd;
+                background: transparent;
             }
          </style>
             <ul data-role="listview" data-filter="true" data-filter-placeholder="Search friends..." data-inset="true" class="create-1-event-list" style="margin:0px;">
@@ -74,64 +74,69 @@
                     padding:1.6em;
                     text-align:center;
                 }
+                .friend_grid>div{
+                    margin-top:-20px;
+                }
                 .friend_grid>div>div{
-                    background:#eee;
+                    background:transparent;
                 }
                 .friend_grid a label{
                     font-weight:bold !important;
                 }
                 .friend_grid>div>div{
                     padding:0.5em;
+                    padding-top:0;
+                    padding-bottom:0;
                 }
                 .friend_grid>div:nth-child(2n+1)>div:nth-child(2n+1),
                 .friend_grid>div:nth-child(2n)>div:nth-child(2n){
-                    background:#ccc;
+                    background:transparent;
                 }
                 .friend_grid>div>div:hover,
                 .friend_grid>div:nth-child(2n+1)>div:hover:nth-child(2n+1),
                 .friend_grid>div:nth-child(2n)>div:hover:nth-child(2n){
-                    background:#999;
+                    background:transparent;
                     cursor:pointer;
                 }
             </style>
             <div class="friend_grid">
-                <div class="ui-grid-b">
+                <div class="ui-grid-b" style="height:150px">
                     
                     <div class="ui-block-c" >
                     <a href="akshayprofile.html">
-                        <img src="images/akshay_round.gif"  style="height:100px; width:100px">
+                        <img src="images/akshay_round.gif">
                         <label>Akshay</label>
                     </a>
                     </div>
                     <div class="ui-block-c" > 
                     <a href="Alexaprofile.html" >
-                        <img src="images/alexa_round.gif" style="height:100px; width:100px">
+                        <img src="images/alexa_round.gif">
                         <label>Alexa</label>
                     </a>
                     </div>
                     <div class="ui-block-c" >
                     <a href="friend_detail.html">
-                        <img src="images/pro9.png"  style="height:100px; width:100px">
+                        <img src="images/pro9.png">
                         <label>Ariel</label>
                     </a>
                     </div>
                 </div>
-                <div class="ui-grid-b">
+                <div class="ui-grid-b" style="height:150px">
                     <div class="ui-block-c" >
                     <a href="Bellaprofile.html">
-                        <img src="images/bella_round.gif"  style="height:100px; width:100px">
+                        <img src="images/bella_round.gif">
                         <label>Bella</label>
                     </a>
                     </div>
                     <div class="ui-block-c">
                     <a href="friend_detail.html">
-                        <img src="images/pro7.png"  style="height:100px; width:100px">
+                        <img src="images/pro7.png">
                         <label>Bruce</label>
                     </a>
                     </div>
                     <div class="ui-block-c">
                     <a href="DeanProfile.html">
-                        <img src="images/dean_round.gif"  style="height:100px; width:100px">
+                        <img src="images/dean_round.gif">
                         <label>Dean</label>
                     </a>
                     </div>

@@ -61,11 +61,12 @@ $(document).off('pagebeforeshow').on('pagebeforeshow', function(){
     }
     $(page).find('.menu-bar>ul').find('.logout-btn').remove();
     $(page).find('.menu-bar>ul').find('#log-in').remove();
-                     
+    
     if(Auth.check()){
         $(page).find('.menu-bar>ul').append('<li><a href="#" style="background-color: #555555;color: white;" class="logout-btn">Log Out</a></li>');
     }else{
         $(page).find('.menu-bar>ul').append('<li><a href="signin.html" id="log-in">Log In</a></li>');
+        $(page).find('#index_first_link').attr('href','eventdetail_withoutjoin.html');
     }
 
     $('.login-btn').off('click').on('click',function(){

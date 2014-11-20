@@ -22,7 +22,7 @@
 </head>
 <body>
 
-    <div data-role="page" class="ui-page-theme-a">
+    <div data-role="page" class="ui-page-theme-a no_login">
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
     <script>
         function initialize() {
@@ -36,7 +36,7 @@
             var marker1 = new google.maps.Marker({
                 position: myLatlng,
                 map: map,
-                title: 'Dining with Trojans'
+                title: 'Wicked Music'
             });
         }
 
@@ -89,10 +89,14 @@
               <a href="event_chat.html" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-btn-inline ui-icon-comment ui-btn-icon-notext" style="margin-top:5px; z-index: 10;"></a>
            </div>
         </div>
+
+
+        <div style="clear:both"></div>
+        
         <div data-role="main" class="ui-content eventdetail" style="padding-bottom: 100px;">
             <div class="c4_eventname" style="background-image: url(images/profile-bg.jpg);"> 
-                <img src="images/dining.png">
-                <h3>Dining with Trojans</h3>
+                <img src="images/fun.png">
+                <h3>Wicked Musical</h3>
             </div>
             <div class="clearfix"></div>
             <div class="c_event4" style="margin-bottom: -20px;">
@@ -102,7 +106,7 @@
                             <label style="line-height:30px"><strong>Date:</strong></label>
                         </div>
                         <div class="ui-block-b event-detail-value" style="width: 60%">
-                            <label style="line-height:30px">Jan 14, 2015</label>
+                            <label style="line-height:30px">Jan 13, 2015</label>
                         </div>
                     </div>
                     <div class="ui-grid-a">
@@ -110,7 +114,7 @@
                             <label style="line-height:30px;"><strong>Time:</strong></label>
                         </div>
                         <div class="ui-block-b event-detail-value" style="width: 60%">
-                            <label style="line-height:30px">6:00 pm-8:30 pm</label>
+                            <label style="line-height:30px">6:00 pm-9:30 pm</label>
                         </div>
                     </div>
                     <div class="ui-grid-a">
@@ -118,7 +122,7 @@
                             <label style="line-height:30px"><strong>Location:</strong></label>
                         </div>
                         <div class="ui-block-b event-detail-value" style="width: 60%">
-                            <label style="line-height:30px">VKC 201</label>
+                            <label style="line-height:30px">Bovard Auditorium</label>
                         </div>
                     </div>
                     <div class="ui-grid-a">
@@ -132,19 +136,20 @@
 
                     <div class="c4_detail" style="height:400px">
                         <a href="eventdetail.html" rel="external"> <div id="map-canvas" ></div>  </a>
-                       Dine with trojans at VKC.
+                        Come see the musical of the century! USC takes on Wicked!
+                        Tickets start at $25!
 
                     </div>
 
-                    <div stye="text-align: center; margin:0px auto;">
-                         <a href="index.html" class="ui-shadow ui-btn"
+                    <div style="text-align: center; margin:0px auto;">
+                        <a href="javascript:history.back();" class="ui-shadow ui-btn btn-back"
                             style="position: fixed; background-color:#FF5824;  padding:10px;   display: block; bottom: -1px; margin: 5px -2em; font-size:15px; color:white; width:50px; height: 20px; text-shadow: none; z-index: 2">Back</a>
                     </div>
                     <div style="clear: both"></div>
                 </form>
             </div>
-            <div class="ui-block-a event-detail-field" style="width: 40%; margin-left: 2em">
-                <label style="line-height:30px"><strong>Attendants:</strong></label>
+            <div class="ui-block-a event-detail-field" style="width: 45%; margin-left: 2em">
+                <label style="line-height:30px"><strong>Attendants (134):</strong></label>
             </div><br/><br/>
             <div class="p-friend-div" style="margin-top: 0px; margin-bottom: 0px;">
                 <ol>
@@ -154,12 +159,14 @@
                                 <span style="font-size: 9pt; margin:0; padding: 0;">Akshay</span>
                         </div></a>
                     </li>
+                    <!--
                      <li><a href="friend_detail.html">
                             <div style="text-align: center">
                                 <img src="images/alexa_round.gif"/><br/>
                                 <span style="font-size: 9pt; margin:0; padding: 0;">Alexa</span>
                         </div></a>
                     </li>
+                    -->
                     <li><a href="friend_detail.html">
                             <div style="text-align: center">
                                 <img src="images/bella_round.gif"/><br/>
@@ -187,22 +194,29 @@
                 </ol>
             </div>
             <div class="ui-grid-b">
-                <a href="#myPopupDialog" data-rel="popup" data-position-to="window" data-transition="fade" class="ui-btn ui-shadow ui-btn-inline event-details-plus"
-                    style="position: fixed; top: 50px; right: 10px; padding-right: 25px; font-size:15px; width: 35px; height: 15px; line-height: 15px; margin-right:0px; background-color: #8AE62E; color: white; text-shadow: none; font-weight: 900;">
-                    Join</a> 
+                 
                 <div data-role="popup" class="ui-corner-all ui-grid-b" id="myPopupDialog" style="padding: 10px; text-align: center; font-weight: bold">  
-                    <p>You joined the <span style="color: green">Dining with Trojans</span> Event!</p>
-                    <a href="upcoming_event_highlight.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Okay</a>
-                    <br/>
-                    <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a>
-                    <br/>
-                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+                    <div id="popupadd">
+                        <p>You joined the <span style="color: green">Wicked Musical</span> Event!</p>
+                        <a href="upcoming_event_highlight.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="">Okay</a>
+                        <br/>
+                        <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a>
+                        <br/>
+                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+                    </div>
+                    <div id="popupleave" style="display:none">
+                        <a href="edit_event.html" class="ui-btn ui-shadow  ui-btn-w pop-up-btn" data-rel="">Edit</a>
+                        <a href="#" onclick="window.location.replace('eventdetail.html')" class="ui-btn ui-shadow  ui-btn-w pop-up-btn" data-rel="">Leave</a>
+                        <a href="/friendsearch/index.html" class="ui-btn ui-shadow ui-btn-w pop-up-btn" data-rel="back">Invite Friends</a>
+                        <a href="#" class="ui-btn ui-shadow ui-btn-w pop-up-btn" data-rel="back">Post on Facebook</a>
+                    </div>
                 </div> 
                 <a type="label" id="count" value=""></a>
             </div>
         </div>
     </div>
     <script src="js/menu-bar.js"></script>
+    <script src="js/event_btn.js"></script>
 
 </body>
 </html>

@@ -6,7 +6,14 @@ $(document).on('pagebeforecreate', function(){
     slideLeft();
     resetBars();
     
+    $(document).find('a[href="createevent2.html"]').attr('data-ajax','false');
+    $(document).find('a[href="friend_detail.html"]').attr('data-ajax','false');
+    $(document).find('a[href="Bellaprofile.html"]').attr('data-ajax','false');
+    $(document).find('a[href="Alexaprofile.html"]').attr('data-ajax','false');
     $(document).find('a[href="eventdetail.html"]').attr('data-ajax','false');
+    $(document).find('a[href="eventdetail2.html"]').attr('data-ajax','false');
+    $(document).find('a[href="eventdetail.html?m=1"]').attr('data-ajax','false');
+    $(document).find('a[href="eventdetail2.html?m=1"]').attr('data-ajax','false');
     $(document).find('a[href="index.html"]').attr('data-ajax','false');
     $(document).find('a[href="event_academic.html"]').attr('data-ajax','false');
     $(document).find('a[href="event_sports.html"]').attr('data-ajax','false');
@@ -22,27 +29,27 @@ $(document).on('pagebeforecreate', function(){
     
     $('#event-academic').on('pageinit', function() {
         startDown();
-        $(".ui-filterable").css("top", "50px");
+        //$(".ui-filterable").css("top", "50px");
     });
     
     $('#event-sports').on('pageinit', function() {
         startDown();
-        $(".ui-filterable").css("top", "50px");
+        //$(".ui-filterable").css("top", "50px");
     });
     
     $('#event-dining').on('pageinit', function() {
         startDown();
-        $(".ui-filterable").css("top", "50px");
+        //$(".ui-filterable").css("top", "50px");
     });
     
     $('#event-fun').on('pageinit', function() {
         startDown();
-        $(".ui-filterable").css("top", "50px");
+        //$(".ui-filterable").css("top", "50px");
     });
     
     $('#event-shopping').on('pageinit', function() {
         startDown();
-        $(".ui-filterable").css("top", "50px");
+        //$(".ui-filterable").css("top", "50px");
     });
     
 });
@@ -159,7 +166,7 @@ function resetBars() {
 function slideLeft() {
 	$(".menu-bar").animate({left: "-185px"}, "fast");
     $(".ui-content").animate({marginLeft: "0px"}, "fast");
-    $(".ui-filterable").animate({left: "0px"}, "fast");
+    $(".create-1-event-list .ui-filterable").animate({left: "0px"}, "fast");
     $(".category-bar").animate({left: "0px"}, "fast");
 	$(".expand-advanced-btn").animate({left: "0px"}, "fast");
     $(".btn-edit").animate({left: "255px"}, "fast");
@@ -173,7 +180,7 @@ function slideLeft() {
 function slideRight() {
 	$(".menu-bar").animate({left: "0px"}, "fast");
     $(".ui-content").animate({marginLeft: "185px"}, "fast");
-    $(".ui-filterable").animate({left: "185px"}, "fast");
+    $(".create-1-event-list .ui-filterable").animate({left: "185px"}, "fast");
     $(".category-bar").animate({left: "185px"}, "fast");
 	$(".expand-advanced-btn").animate({left: "185px"}, "fast");
     $(".btn-edit").animate({left: "405px"}, "fast");
